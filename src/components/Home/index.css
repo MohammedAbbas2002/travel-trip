@@ -1,0 +1,131 @@
+.mobile-home-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 92vh;
+  padding: 14px;
+}
+
+@media screen and (min-width: 768px) {
+  .mobile-home-container {
+    display: none;
+  }
+}
+
+.mobile-home-image-container {
+  text-align: center;
+}
+
+.mobile-home-image {
+  width: 227px;
+  height: 312px;
+}
+
+.mobile-home-heading {
+  font-family: Roboto;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 32px;
+  letter-spacing: 0.1px;
+  color: #304766;
+  margin-bottom: 0;
+}
+
+.mobile-home-description {
+  font-family: Roboto;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 32px;
+  letter-spacing: 0.2px;
+  color: #304766;
+  margin-bottom: 20px;
+}
+
+.mobile-home-book-a-new-trip-button-container {
+  text-align: center;
+}
+
+.mobile-home-book-a-new-trip-button {
+  width: 175px;
+  height: 48px;
+  border-radius: 8px;
+  padding-top: 12px;
+  padding-right: 24px;
+  padding-bottom: 12px;
+  padding-left: 24px;
+  gap: 8px;
+  background-color: #304766;
+  color: #ffffff;
+  font-family: Roboto;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: 0.1px;
+  text-align: center;
+  border: none;
+  cursor: pointer;
+  outline: none;
+}
+
+.desktop-home-container {
+  display: flex;
+  padding-left: 162px;
+  padding-right: 162px;
+}
+
+@media screen and (max-width: 767px) {
+  .desktop-home-container {
+    display: none;
+  }
+}
+
+.desktop-home-content-container {
+  width: 526px;
+  margin-top: 80px;
+}
+
+.desktop-home-heading {
+  font-family: Roboto;
+  font-weight: 600;
+  font-size: 56px;
+  line-height: 72px;
+  letter-spacing: 0.1px;
+  color: #304766;
+}
+
+.desktop-home-description {
+  font-family: Roboto;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 37px;
+  letter-spacing: 0.2px;
+  color: #304766;
+  margin-bottom: 40px;
+}
+
+.desktop-home-book-a-new-trip-button {
+  width: 175px;
+  height: 48px;
+  border-radius: 8px;
+  padding-top: 12px;
+  padding-right: 24px;
+  padding-bottom: 12px;
+  padding-left: 24px;
+  gap: 8px;
+  background-color: #304766;
+  font-family: Roboto;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: 0.1px;
+  color: #ffffff;
+  border: none;
+  cursor: pointer;
+  outline: none;
+}
+
+.desktop-home-image {
+  width: 644px;
+  height: 624px;
+  margin-top: 40px;
+}
