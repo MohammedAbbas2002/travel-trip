@@ -180,34 +180,107 @@ class BookANewTrip extends Component {
     )
   }
 
-  renderDateSelectionView = () => (
-    <div className="date-selection-container">
-      <h1 className="date-selection-heading">Date Selection</h1>
-      <p className="date-selection-description">
-        Select your Start and End Date.
-      </p>
-      <form>
-        <div className="start-date-input-container">
-          <label htmlFor="startDate" className="label">
-            Start Date
-          </label>
-          <br />
-          <input
-            type="date"
-            placeholder="dd/mm/yyyy"
-            className="start-date-input red-border red-placeholder-text"
-            id="startDate"
-            value=""
-          />
-        </div>
-        <div className="next-button-container">
-          <button type="submit" className="next-button">
-            Next
-          </button>
-        </div>
-      </form>
-    </div>
-  )
+  onChangeStartDate = event => {
+    this.setState({startDate: event.target.value})
+  }
+
+  onChangeEndDate = event => {
+    this.setState({endDate: event.target.value})
+  }
+
+  onSubmitDateSelectionForm = event => {
+    event.preventDefault()
+
+    const {startDate, endDate} = this.state
+
+    if (startDate !== '' && endDate !== '') {
+      this.setState({activeStep: stepsList[2].stepId})
+    } else {
+      if (startDate === '') {
+        this.setState({isStartDateEmpty: true})
+      } else {
+        this.setState({isStartDateEmpty: false})
+      }
+      if (endDate === '') {
+        this.setState({isEndDateEmpty: true})
+      } else {
+        this.setState({isEndDateEmpty: false})
+      }
+    }
+  }
+
+  onGoToYourDetailsForm = () => {
+    this.setState({activeStep: stepsList[0].stepId})
+  }
+
+  renderDateSelectionView = () => {
+    const {startDate, endDate, isStartDateEmpty, isEndDateEmpty} = this.state
+
+    const startDateRedBorder = isStartDateEmpty ? 'red-border' : ''
+
+    const startDateRedPlaceholderText = isStartDateEmpty
+      ? 'red-placeholder-text'
+      : ''
+
+    const endDateRedBorder = isEndDateEmpty ? 'red-border' : ''
+
+    const endDateRedPlaceholderText = isEndDateEmpty
+      ? 'red-placeholder-text'
+      : ''
+
+    return (
+      <div className="date-selection-container">
+        <h1 className="date-selection-heading">Date Selection</h1>
+        <p className="date-selection-description">
+          Select your Start and End Date.
+        </p>
+        <form onSubmit={this.onSubmitDateSelectionForm}>
+          <div className="start-date-input-container">
+            <label htmlFor="startDate" className="label">
+              Start Date
+            </label>
+            <br />
+            <input
+              type="date"
+              className={`start-date-input ${startDateRedBorder} ${startDateRedPlaceholderText}`}
+              id="startDate"
+              value={startDate}
+              onChange={this.onChangeStartDate}
+            />
+          </div>
+          {isStartDateEmpty && (
+            <p className="error-message">Select start date</p>
+          )}
+          <div className="end-date-input-container">
+            <label htmlFor="endDate" className="label">
+              End Date
+            </label>
+            <br />
+            <input
+              type="date"
+              className={`end-date-input ${endDateRedBorder} ${endDateRedPlaceholderText}`}
+              id="endDate"
+              value={endDate}
+              onChange={this.onChangeEndDate}
+            />
+          </div>
+          {isEndDateEmpty && <p className="error-message">Select end date</p>}
+          <div className="previous-and-next-button-container">
+            <button
+              type="button"
+              className="previous-button"
+              onClick={this.onGoToYourDetailsForm}
+            >
+              Previous
+            </button>
+            <button type="submit" className="next-button">
+              Next
+            </button>
+          </div>
+        </form>
+      </div>
+    )
+  }
 
   renderStep = () => {
     const {activeStep} = this.state
@@ -239,7 +312,7 @@ class BookANewTrip extends Component {
               const active = eachStep.stepId === activeStep ? 'active' : ''
 
               return (
-                <li>
+                <li key={eachStep.stepId}>
                   <hr className={`hr-line ${active}`} />
                 </li>
               )
