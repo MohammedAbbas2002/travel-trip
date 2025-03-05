@@ -23,7 +23,7 @@ const travelAssistanceList = [
 
 class BookANewTrip extends Component {
   state = {
-    activeStep: stepsList[3].stepId,
+    activeStep: stepsList[4].stepId,
     name: '',
     startLocation: '',
     endLocation: '',
@@ -471,11 +471,11 @@ class BookANewTrip extends Component {
   }
 
   onGoToGuestsForm = () => {
-    this.setState(this.setState({activeStep: stepsList[2].stepId}))
+    this.setState({activeStep: stepsList[2].stepId})
   }
 
-  onGoToConfirmation = () => {
-    this.setState(this.setState({activeStep: stepsList[4].stepId}))
+  onGoToConfirmationForm = () => {
+    this.setState({activeStep: stepsList[4].stepId})
   }
 
   renderTravelAssistanceView = () => {
@@ -537,7 +537,7 @@ class BookANewTrip extends Component {
           >
             Previous
           </button>
-          <button onClick={this.onGoToConfirmation} className="next-button">
+          <button onClick={this.onGoToConfirmationForm} className="next-button">
             Next
           </button>
         </div>
@@ -545,7 +545,94 @@ class BookANewTrip extends Component {
     )
   }
 
-  renderConfirmationView = () => {}
+  onCancelTrip = () => {
+    this.setState({
+      activeStep: stepsList[0].stepId,
+      name: '',
+      startLocation: '',
+      endLocation: '',
+      isNameEmpty: false,
+      isStartLocationEmpty: false,
+      isEndLocationEmpty: false,
+      startDate: '',
+      endDate: '',
+      isStartDateEmpty: false,
+      isEndDateEmpty: false,
+      isEndDateLesserThanStartDate: false,
+      adultsCount: 1,
+      childrenCount: 0,
+      infantsCount: 0,
+      isTravelAssistanceChecked: false,
+      travelAssistance: '',
+    })
+  }
+
+  onConfirmTrip = () => {}
+
+  renderConfirmationView = () => {
+    const {
+      name,
+      startLocation,
+      endLocation,
+      startDate,
+      endDate,
+      guests,
+      travelAssistance,
+    } = this.state
+
+    return (
+      <div className="confirmation-container">
+        <h1 className="confirmation-heading">Confirmation</h1>
+        <p className="confirmation-description">Confirm your details</p>
+        <ul className="confirmation-list">
+          <li className="confirmation-item">
+            <p className="confirmation-label">Name:</p>
+            <p className="confirmation-value">{name}</p>
+          </li>
+          <li className="confirmation-item">
+            <p className="confirmation-label">Start Location:</p>
+            <p className="confirmation-value">{startLocation}</p>
+          </li>
+          <li className="confirmation-item">
+            <p className="confirmation-label">End Location:</p>
+            <p className="confirmation-value">{endLocation}</p>
+          </li>
+          <li className="confirmation-item">
+            <p className="confirmation-label">Start Date:</p>
+            <p className="confirmation-value">{startDate}</p>
+          </li>
+          <li className="confirmation-item">
+            <p className="confirmation-label">End Date:</p>
+            <p className="confirmation-value">{endDate}</p>
+          </li>
+          <li className="confirmation-item">
+            <p className="confirmation-label">Guests:</p>
+            <p className="confirmation-value">{guests}</p>
+          </li>
+          <li className="confirmation-item">
+            <p className="confirmation-label">Travel Assistance:</p>
+            <p className="confirmation-value">{travelAssistance}</p>
+          </li>
+        </ul>
+        <div className="cancel-and-confirm-button-container">
+          <button
+            type="button"
+            className="cancel-button"
+            onClick={this.onCancelTrip}
+          >
+            Cancel
+          </button>
+          <button
+            type="button"
+            onClick={this.onConfirmTrip}
+            className="confirm-button"
+          >
+            Confirm
+          </button>
+        </div>
+      </div>
+    )
+  }
 
   renderStep = () => {
     const {activeStep} = this.state
