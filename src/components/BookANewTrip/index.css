@@ -11,13 +11,13 @@
   margin-top: 20px;
 }
 
-.hr-line {
+.top-hr-line {
   width: 59.2px;
   border-radius: 12px;
   border: 2px solid #e7e7e7;
 }
 
-.active {
+.top-hr-line-active {
   border: 2px solid #2563eb;
 }
 
@@ -273,4 +273,144 @@
   outline: none;
   border: none;
   margin-right: 16px;
+}
+
+.guests-container {
+  padding-top: 8px;
+}
+
+.guests-heading {
+  font-family: Roboto;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 32px;
+  letter-spacing: 0.1px;
+  color: #334155;
+  margin-bottom: 10px;
+}
+
+.guests-description {
+  font-family: Roboto;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: 0.2px;
+  color: #5c6777;
+  margin-top: 0;
+  margin-bottom: 20px;
+}
+
+.guests-list {
+  padding: 0;
+  list-style-type: none;
+}
+
+.guest-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.guest-item-name {
+  font-family: Roboto;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: 0%;
+  color: #334155;
+  margin-bottom: 6px;
+}
+
+.guest-item-age {
+  font-family: Roboto;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: 0%;
+  color: #475569;
+  margin-top: 0;
+}
+
+.guest-item-buttons-container {
+  display: flex;
+  align-items: center;
+}
+
+.guest-item-decrement-button {
+  width: 32px;
+  height: 32px;
+  border-radius: 16px;
+  border: 1px solid #cbd5e1;
+  background-color: #ffffff;
+  cursor: pointer;
+  outline: none;
+  margin-right: 14px;
+}
+
+.guest-item-count {
+  font-family: Roboto;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 28px;
+  letter-spacing: 0%;
+  color: #475569;
+}
+
+.guest-item-increment-button {
+  width: 32px;
+  height: 32px;
+  border-radius: 16px;
+  border: 1px solid #cbd5e1;
+  background-color: #ffffff;
+  cursor: pointer;
+  outline: none;
+  margin-left: 14px;
+}
+
+.guests-hr-line {
+  border: 1px solid #e2e8f0;
+}
+
+.travel-assistance-container {
+  padding-top: 8px;
+}
+
+.travel-assistance-heading {
+  font-family: Roboto;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 32px;
+  letter-spacing: 0.1px;
+  color: #334155;
+  margin-bottom: 10px;
+}
+
+.travel-assistance-description {
+  font-family: Roboto;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: 0.2px;
+  color: #5c6777;
+  margin-top: 0;
+  margin-bottom: 20px;
+}
+
+.travel-assistance-checkbox-container {
+  display: flex;
+  align-items: center;
+}
+
+.travel-assistance-checkbox {
+  width: 16px;
+  height: 16px;
+}
+
+.travel-assistance-checkbox-text {
+  font-family: Roboto;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: 0%;
+  color: #334155;
 }

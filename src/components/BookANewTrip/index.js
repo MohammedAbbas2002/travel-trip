@@ -1,5 +1,6 @@
 import {Component} from 'react'
 import {MdErrorOutline} from 'react-icons/md'
+import {FaPlus, FaMinus} from 'react-icons/fa6'
 
 import Footer from '../Footer'
 
@@ -15,7 +16,7 @@ const stepsList = [
 
 class BookANewTrip extends Component {
   state = {
-    activeStep: stepsList[0].stepId,
+    activeStep: stepsList[3].stepId,
     name: '',
     startLocation: '',
     endLocation: '',
@@ -27,6 +28,9 @@ class BookANewTrip extends Component {
     isStartDateEmpty: false,
     isEndDateEmpty: false,
     isEndDateLesserThanStartDate: false,
+    adultsCount: 1,
+    childrenCount: 0,
+    infantsCount: 0,
   }
 
   onChangeName = event => {
@@ -302,6 +306,160 @@ class BookANewTrip extends Component {
     )
   }
 
+  onDecrementAdultsCount = () => {
+    const {adultsCount} = this.state
+
+    if (adultsCount > 1) {
+      this.setState(prevState => ({adultsCount: prevState.adultsCount - 1}))
+    }
+  }
+
+  onIncrementAdultsCount = () => {
+    this.setState(prevState => ({adultsCount: prevState.adultsCount + 1}))
+  }
+
+  onDecrementChildrenCount = () => {
+    const {childrenCount} = this.state
+
+    if (childrenCount > 0) {
+      this.setState(prevState => ({childrenCount: prevState.childrenCount - 1}))
+    }
+  }
+
+  onIncrementChildrenCount = () => {
+    this.setState(prevState => ({childrenCount: prevState.childrenCount + 1}))
+  }
+
+  onDecrementInfantsCount = () => {
+    const {infantsCount} = this.state
+
+    if (infantsCount > 0) {
+      this.setState(prevState => ({infantsCount: prevState.infantsCount - 1}))
+    }
+  }
+
+  onIncrementInfantsCount = () => {
+    this.setState(prevState => ({infantsCount: prevState.infantsCount + 1}))
+  }
+
+  onGoToDateSelectionForm = () => {
+    this.setState({activeStep: stepsList[1].stepId})
+  }
+
+  onGoToTravelAssistanceForm = () => {
+    this.setState({activeStep: stepsList[3].stepId})
+  }
+
+  renderGuestsView = () => {
+    const {adultsCount, childrenCount, infantsCount} = this.state
+
+    return (
+      <div className="guests-container">
+        <h1 className="guests-heading">Guests</h1>
+        <p className="guests-description">Select your Guests</p>
+        <ul className="guests-list">
+          <li className="guest-item">
+            <div>
+              <p className="guest-item-name">Adults</p>
+              <p className="guest-item-age">Age 13 or above</p>
+            </div>
+            <div className="guest-item-buttons-container">
+              <button
+                className="guest-item-decrement-button"
+                onClick={this.onDecrementAdultsCount}
+              >
+                <FaMinus size="14" color="#1E293B" />
+              </button>
+              <p className="guest-item-count">{adultsCount}</p>
+              <button
+                className="guest-item-increment-button"
+                onClick={this.onIncrementAdultsCount}
+              >
+                <FaPlus size="14" color="#1E293B" />
+              </button>
+            </div>
+          </li>
+          <hr className="guests-hr-line" />
+          <li className="guest-item">
+            <div>
+              <p className="guest-item-name">Children</p>
+              <p className="guest-item-age">Age 2-12</p>
+            </div>
+            <div className="guest-item-buttons-container">
+              <button
+                className="guest-item-decrement-button"
+                onClick={this.onDecrementChildrenCount}
+              >
+                <FaMinus size="14" color="#1E293B" />
+              </button>
+              <p className="guest-item-count">{childrenCount}</p>
+              <button
+                className="guest-item-increment-button"
+                onClick={this.onIncrementChildrenCount}
+              >
+                <FaPlus size="14" color="#1E293B" />
+              </button>
+            </div>
+          </li>
+          <hr className="guests-hr-line" />
+          <li className="guest-item">
+            <div>
+              <p className="guest-item-name">Infants</p>
+              <p className="guest-item-age">Under 2</p>
+            </div>
+            <div className="guest-item-buttons-container">
+              <button
+                className="guest-item-decrement-button"
+                onClick={this.onDecrementInfantsCount}
+              >
+                <FaMinus size="14" color="#1E293B" />
+              </button>
+              <p className="guest-item-count">{infantsCount}</p>
+              <button
+                className="guest-item-increment-button"
+                onClick={this.onIncrementInfantsCount}
+              >
+                <FaPlus size="14" color="#1E293B" />
+              </button>
+            </div>
+          </li>
+        </ul>
+        <div className="previous-and-next-button-container">
+          <button
+            type="button"
+            className="previous-button"
+            onClick={this.onGoToDateSelectionForm}
+          >
+            Previous
+          </button>
+          <button
+            onClick={this.onGoToTravelAssistanceForm}
+            className="next-button"
+          >
+            Next
+          </button>
+        </div>
+      </div>
+    )
+  }
+
+  renderTravelAssistanceView = () => {
+    const {} = this.state
+
+    return (
+      <div className="travel-assistance-container">
+        <h1 className="travel-assistance-heading">Travel Assistance</h1>
+        <p className="travel-assistance-description">
+          Select your Travel Assistance.
+        </p>
+        <div className="travel-assistance-checkbox-container">
+          <input type="checkbox" className="travel-assistance-checkbox" />
+          <p className="travel-assistance-checkbox-text">Travel Assistance</p>
+        </div>
+      </div>
+    )
+  }
+
   renderStep = () => {
     const {activeStep} = this.state
 
@@ -311,9 +469,9 @@ class BookANewTrip extends Component {
       case stepsList[1].stepId:
         return this.renderDateSelectionView()
       case stepsList[2].stepId:
-        return null
+        return this.renderGuestsView()
       case stepsList[3].stepId:
-        return null
+        return this.renderTravelAssistanceView()
       case stepsList[4].stepId:
         return null
       default:
@@ -329,11 +487,12 @@ class BookANewTrip extends Component {
         <div className="book-a-new-trip-container">
           <ul className="hr-lines-list">
             {stepsList.map(eachStep => {
-              const active = eachStep.stepId === activeStep ? 'active' : ''
+              const topHrLineActive =
+                eachStep.stepId === activeStep ? 'top-hr-line-active' : ''
 
               return (
                 <li key={eachStep.stepId}>
-                  <hr className={`hr-line ${active}`} />
+                  <hr className={`top-hr-line ${topHrLineActive}`} />
                 </li>
               )
             })}
