@@ -14,6 +14,13 @@ const stepsList = [
   {stepId: 'CONFIRMATION', displayText: 'Confirmation'},
 ]
 
+const travelAssistanceList = [
+  {value: 'car', displayText: 'Car'},
+  {value: 'flight', displayText: 'Flight'},
+  {value: 'bus', displayText: 'Bus'},
+  {value: 'train', displayText: 'Train'},
+]
+
 class BookANewTrip extends Component {
   state = {
     activeStep: stepsList[3].stepId,
@@ -31,6 +38,7 @@ class BookANewTrip extends Component {
     adultsCount: 1,
     childrenCount: 0,
     infantsCount: 0,
+    isTravelAssistanceChecked: false,
   }
 
   onChangeName = event => {
@@ -443,8 +451,14 @@ class BookANewTrip extends Component {
     )
   }
 
+  onToggleTravelAssistance = () => {
+    this.setState(prevState => ({
+      isTravelAssistanceChecked: !prevState.isTravelAssistanceChecked,
+    }))
+  }
+
   renderTravelAssistanceView = () => {
-    const {} = this.state
+    const {isTravelAssistanceChecked} = this.state
 
     return (
       <div className="travel-assistance-container">
@@ -453,8 +467,36 @@ class BookANewTrip extends Component {
           Select your Travel Assistance.
         </p>
         <div className="travel-assistance-checkbox-container">
-          <input type="checkbox" className="travel-assistance-checkbox" />
-          <p className="travel-assistance-checkbox-text">Travel Assistance</p>
+          <input
+            id="travelAssistance"
+            type="checkbox"
+            className="travel-assistance-checkbox"
+            onChange={this.onToggleTravelAssistance}
+          />
+          <label
+            htmlFor="travelAssistance"
+            className="travel-assistance-checkbox-text"
+          >
+            Travel Assistance
+          </label>
+        </div>
+
+        {isTravelAssistanceChecked && ''}
+
+        <div className="previous-and-next-button-container">
+          <button
+            type="button"
+            className="previous-button"
+            onClick={this.onGoToDateSelectionForm}
+          >
+            Previous
+          </button>
+          <button
+            onClick={this.onGoToTravelAssistanceForm}
+            className="next-button"
+          >
+            Next
+          </button>
         </div>
       </div>
     )

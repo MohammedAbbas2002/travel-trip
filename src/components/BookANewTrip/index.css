@@ -399,11 +399,13 @@
 .travel-assistance-checkbox-container {
   display: flex;
   align-items: center;
+  margin-bottom: 20px;
 }
 
 .travel-assistance-checkbox {
   width: 16px;
   height: 16px;
+  margin-right: 8px;
 }
 
 .travel-assistance-checkbox-text {

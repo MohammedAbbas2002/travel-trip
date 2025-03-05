@@ -6,15 +6,6 @@ import BookANewTrip from './components/BookANewTrip'
 
 import './App.css'
 
-// Note: Use the lists in your code to pass the test cases
-const travelAssistanceList = [
-  {value: 'car', displayText: 'Car'},
-  {value: 'flight', displayText: 'Flight'},
-  {value: 'bus', displayText: 'Bus'},
-  {value: 'train', displayText: 'Train'},
-]
-
-// Replace your code here
 const App = () => (
   <Switch>
     <Route exact path="/login" component={Login} />
