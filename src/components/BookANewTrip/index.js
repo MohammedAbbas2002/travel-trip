@@ -39,6 +39,7 @@ class BookANewTrip extends Component {
     childrenCount: 0,
     infantsCount: 0,
     isTravelAssistanceChecked: false,
+    travelAssistance: '',
   }
 
   onChangeName = event => {
@@ -452,13 +453,33 @@ class BookANewTrip extends Component {
   }
 
   onToggleTravelAssistance = () => {
+    const {isTravelAssistanceChecked} = this.state
+
+    if (isTravelAssistanceChecked) {
+      this.setState({travelAssistance: ''})
+    } else {
+      this.setState({travelAssistance: travelAssistanceList[0].value})
+    }
+
     this.setState(prevState => ({
       isTravelAssistanceChecked: !prevState.isTravelAssistanceChecked,
     }))
   }
 
+  onChangeTravelAssistance = event => {
+    this.setState({travelAssistance: event.target.value})
+  }
+
+  onGoToGuestsForm = () => {
+    this.setState(this.setState({activeStep: stepsList[2].stepId}))
+  }
+
+  onGoToConfirmation = () => {
+    this.setState(this.setState({activeStep: stepsList[4].stepId}))
+  }
+
   renderTravelAssistanceView = () => {
-    const {isTravelAssistanceChecked} = this.state
+    const {isTravelAssistanceChecked, travelAssistance} = this.state
 
     return (
       <div className="travel-assistance-container">
@@ -468,39 +489,63 @@ class BookANewTrip extends Component {
         </p>
         <div className="travel-assistance-checkbox-container">
           <input
-            id="travelAssistance"
+            id="travelAssistanceCheckbox"
             type="checkbox"
             className="travel-assistance-checkbox"
             onChange={this.onToggleTravelAssistance}
           />
           <label
-            htmlFor="travelAssistance"
-            className="travel-assistance-checkbox-text"
+            htmlFor="travelAssistanceCheckbox"
+            className="travel-assistance-checkbox-label"
           >
             Travel Assistance
           </label>
         </div>
 
-        {isTravelAssistanceChecked && ''}
+        {isTravelAssistanceChecked && (
+          <div className="travel-assistance-select-container">
+            <label
+              htmlFor="travelAssistanceSelect"
+              className="travel-assistance-select-label"
+            >
+              Travel Assistance
+            </label>
+            <br />
+            <select
+              id="travelAssistanceSelect"
+              className="travel-assistance-select"
+              onChange={this.onChangeTravelAssistance}
+              value={travelAssistance}
+            >
+              {travelAssistanceList.map(eachTravelAssistance => (
+                <option
+                  key={eachTravelAssistance.value}
+                  value={eachTravelAssistance.value}
+                >
+                  {eachTravelAssistance.displayText}
+                </option>
+              ))}
+            </select>
+          </div>
+        )}
 
         <div className="previous-and-next-button-container">
           <button
             type="button"
             className="previous-button"
-            onClick={this.onGoToDateSelectionForm}
+            onClick={this.onGoToGuestsForm}
           >
             Previous
           </button>
-          <button
-            onClick={this.onGoToTravelAssistanceForm}
-            className="next-button"
-          >
+          <button onClick={this.onGoToConfirmation} className="next-button">
             Next
           </button>
         </div>
       </div>
     )
   }
+
+  renderConfirmationView = () => {}
 
   renderStep = () => {
     const {activeStep} = this.state
@@ -515,7 +560,7 @@ class BookANewTrip extends Component {
       case stepsList[3].stepId:
         return this.renderTravelAssistanceView()
       case stepsList[4].stepId:
-        return null
+        return this.renderConfirmationView()
       default:
         return null
     }
