@@ -7,6 +7,7 @@ import './index.css'
 
 const Home = () => (
   <>
+    {/* Mobile Device */}
     <div className="mobile-home-container">
       <div className="mobile-home-image-container">
         <img
@@ -28,6 +29,7 @@ const Home = () => (
       </div>
     </div>
     <Footer />
+    {/* Desktop Device */}
     <Header />
     <div className="desktop-home-container">
       <div className="desktop-home-content-container">
@@ -36,9 +38,11 @@ const Home = () => (
           With travel trip you can experience new travel and the best tourist
           destinations.
         </p>
-        <button className="desktop-home-book-a-new-trip-button">
-          Book a New Trip
-        </button>
+        <Link to="/book-a-new-trip" className="link">
+          <button className="desktop-home-book-a-new-trip-button">
+            Book a New Trip
+          </button>
+        </Link>
       </div>
       <img
         src="https://res.cloudinary.com/dt7mi4nem/image/upload/v1741060456/image_5_zvyxp6.png"
