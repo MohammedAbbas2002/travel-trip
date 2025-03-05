@@ -26,6 +26,7 @@ class BookANewTrip extends Component {
     endDate: '',
     isStartDateEmpty: false,
     isEndDateEmpty: false,
+    isEndDateLesserThanStartDate: false,
   }
 
   onChangeName = event => {
@@ -194,7 +195,15 @@ class BookANewTrip extends Component {
     const {startDate, endDate} = this.state
 
     if (startDate !== '' && endDate !== '') {
-      this.setState({activeStep: stepsList[2].stepId})
+      if (endDate < startDate) {
+        this.setState({
+          isEndDateLesserThanStartDate: true,
+          isEndDateEmpty: false,
+          isStartDateEmpty: false,
+        })
+      } else {
+        this.setState({activeStep: stepsList[2].stepId})
+      }
     } else {
       if (startDate === '') {
         this.setState({isStartDateEmpty: true})
@@ -214,7 +223,13 @@ class BookANewTrip extends Component {
   }
 
   renderDateSelectionView = () => {
-    const {startDate, endDate, isStartDateEmpty, isEndDateEmpty} = this.state
+    const {
+      startDate,
+      endDate,
+      isStartDateEmpty,
+      isEndDateEmpty,
+      isEndDateLesserThanStartDate,
+    } = this.state
 
     const startDateRedBorder = isStartDateEmpty ? 'red-border' : ''
 
@@ -265,6 +280,11 @@ class BookANewTrip extends Component {
             />
           </div>
           {isEndDateEmpty && <p className="error-message">Select end date</p>}
+          {isEndDateLesserThanStartDate && (
+            <p className="error-message">
+              The end date cannot be less than the start date
+            </p>
+          )}
           <div className="previous-and-next-button-container">
             <button
               type="button"
