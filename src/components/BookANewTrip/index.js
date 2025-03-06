@@ -28,11 +28,11 @@ const travelAssistanceList = [
 class BookANewTrip extends Component {
   state = {
     activeStep: stepsList[0].stepId,
-    isStepOneCompleted: false,
-    isStepTwoCompleted: false,
-    isStepThreeCompleted: false,
-    isStepFourCompleted: false,
-    isStepFiveCompleted: false,
+    stepOneCompletionStatus: 'PENDING',
+    stepTwoCompletionStatus: 'PENDING',
+    stepThreeCompletionStatus: 'PENDING',
+    stepFourCompletionStatus: 'PENDING',
+    stepFiveCompletionStatus: 'PENDING',
     name: '',
     startLocation: '',
     endLocation: '',
@@ -70,7 +70,10 @@ class BookANewTrip extends Component {
     const {name, startLocation, endLocation} = this.state
 
     if (name !== '' && startLocation !== '' && endLocation !== '') {
-      this.setState({isStepOneCompleted: true, activeStep: stepsList[1].stepId})
+      this.setState({
+        stepOneCompletionStatus: 'COMPLETED',
+        activeStep: stepsList[1].stepId,
+      })
     } else {
       if (name === '') {
         this.setState({isNameEmpty: true})
@@ -821,15 +824,43 @@ class BookANewTrip extends Component {
   render() {
     const {
       activeStep,
-      isStepOneCompleted,
-      isStepTwoCompleted,
-      isStepThreeCompleted,
-      isStepFourCompleted,
-      isStepFiveCompleted,
+      stepOneCompletionStatus,
+      stepTwoCompletionStatus,
+      stepThreeCompletionStatus,
+      stepFourCompletionStatus,
+      stepFiveCompletionStatus,
       isTripConfirmed,
     } = this.state
 
     let stepNumber = 0
+
+    const stepsListWithCompletionStatus = [
+      {
+        stepId: 'YOUR_DETAILS',
+        displayText: 'Your Details',
+        completionStatus: stepOneCompletionStatus,
+      },
+      {
+        stepId: 'DATE_SELECTION',
+        displayText: 'Date Selection',
+        completionStatus: stepTwoCompletionStatus,
+      },
+      {
+        stepId: 'GUESTS',
+        displayText: 'Guests',
+        completionStatus: stepThreeCompletionStatus,
+      },
+      {
+        stepId: 'TRAVEL_ASSISTANCE',
+        displayText: 'Travel Assistance',
+        completionStatus: stepFourCompletionStatus,
+      },
+      {
+        stepId: 'CONFIRMATION',
+        displayText: 'Confirmation',
+        completionStatus: stepFiveCompletionStatus,
+      },
+    ]
 
     return (
       <>
@@ -853,7 +884,7 @@ class BookANewTrip extends Component {
           <div className="desktop-book-a-new-trip-card">
             <div className="desktop-book-a-new-trip-card-left-container">
               <ul className="desktop-steps-list">
-                {stepsList.map(eachStep => {
+                {stepsListWithCompletionStatus.map(eachStep => {
                   stepNumber += 1
 
                   const desktopStepItemNumberActive =

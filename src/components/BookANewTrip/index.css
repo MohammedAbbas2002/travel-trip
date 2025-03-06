@@ -87,6 +87,11 @@
   margin-right: 12px;
 }
 
+.desktop-step-item-completion-image {
+  width: 32px;
+  height: 32px;
+}
+
 .desktop-step-item-number-active {
   color: #ffffff;
   border: none;
