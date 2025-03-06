@@ -4,6 +4,8 @@ import {FaPlus, FaMinus} from 'react-icons/fa6'
 
 import Footer from '../Footer'
 
+import TripListContext from '../../context/TripListContext'
+
 import './index.css'
 
 const stepsList = [
@@ -568,10 +570,6 @@ class BookANewTrip extends Component {
     })
   }
 
-  onConfirmTrip = () => {
-    this.setState({isTripConfirmed: true, activeStep: null})
-  }
-
   renderConfirmationView = () => {
     const {
       name,
@@ -597,56 +595,72 @@ class BookANewTrip extends Component {
     }
 
     return (
-      <div className="confirmation-container">
-        <h1 className="confirmation-heading">Confirmation</h1>
-        <p className="confirmation-description">Confirm your details</p>
-        <ul className="confirmation-list">
-          <li className="confirmation-item">
-            <p className="confirmation-label">Name:</p>
-            <p className="confirmation-value">{name}</p>
-          </li>
-          <li className="confirmation-item">
-            <p className="confirmation-label">Start Location:</p>
-            <p className="confirmation-value">{startLocation}</p>
-          </li>
-          <li className="confirmation-item">
-            <p className="confirmation-label">End Location:</p>
-            <p className="confirmation-value">{endLocation}</p>
-          </li>
-          <li className="confirmation-item">
-            <p className="confirmation-label">Start Date:</p>
-            <p className="confirmation-value">{startDate}</p>
-          </li>
-          <li className="confirmation-item">
-            <p className="confirmation-label">End Date:</p>
-            <p className="confirmation-value">{endDate}</p>
-          </li>
-          <li className="confirmation-item">
-            <p className="confirmation-label">Guests:</p>
-            <p className="confirmation-value">{guests}</p>
-          </li>
-          <li className="confirmation-item">
-            <p className="confirmation-label">Travel Assistance:</p>
-            <p className="confirmation-value">{travelAssistanceDisplayText}</p>
-          </li>
-        </ul>
-        <div className="cancel-and-confirm-button-container">
-          <button
-            type="button"
-            className="cancel-button"
-            onClick={this.onCancelTrip}
-          >
-            Cancel
-          </button>
-          <button
-            type="button"
-            onClick={this.onConfirmTrip}
-            className="confirm-button"
-          >
-            Confirm
-          </button>
-        </div>
-      </div>
+      <TripListContext.Consumer>
+        {value => {
+          const {addTrip} = value
+
+          const onConfirmTrip = () => {
+            addTrip({endLocation, startDate, endDate})
+
+            this.setState({isTripConfirmed: true, activeStep: null})
+          }
+
+          return (
+            <div className="confirmation-container">
+              <h1 className="confirmation-heading">Confirmation</h1>
+              <p className="confirmation-description">Confirm your details</p>
+              <ul className="confirmation-list">
+                <li className="confirmation-item">
+                  <p className="confirmation-label">Name:</p>
+                  <p className="confirmation-value">{name}</p>
+                </li>
+                <li className="confirmation-item">
+                  <p className="confirmation-label">Start Location:</p>
+                  <p className="confirmation-value">{startLocation}</p>
+                </li>
+                <li className="confirmation-item">
+                  <p className="confirmation-label">End Location:</p>
+                  <p className="confirmation-value">{endLocation}</p>
+                </li>
+                <li className="confirmation-item">
+                  <p className="confirmation-label">Start Date:</p>
+                  <p className="confirmation-value">{startDate}</p>
+                </li>
+                <li className="confirmation-item">
+                  <p className="confirmation-label">End Date:</p>
+                  <p className="confirmation-value">{endDate}</p>
+                </li>
+                <li className="confirmation-item">
+                  <p className="confirmation-label">Guests:</p>
+                  <p className="confirmation-value">{guests}</p>
+                </li>
+                <li className="confirmation-item">
+                  <p className="confirmation-label">Travel Assistance:</p>
+                  <p className="confirmation-value">
+                    {travelAssistanceDisplayText}
+                  </p>
+                </li>
+              </ul>
+              <div className="cancel-and-confirm-button-container">
+                <button
+                  type="button"
+                  className="cancel-button"
+                  onClick={this.onCancelTrip}
+                >
+                  Cancel
+                </button>
+                <button
+                  type="button"
+                  onClick={onConfirmTrip}
+                  className="confirm-button"
+                >
+                  Confirm
+                </button>
+              </div>
+            </div>
+          )
+        }}
+      </TripListContext.Consumer>
     )
   }
 
