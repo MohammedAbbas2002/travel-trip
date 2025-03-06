@@ -4,6 +4,7 @@ import {FaPlus, FaMinus} from 'react-icons/fa6'
 import {v4 as uuidv4} from 'uuid'
 
 import Footer from '../Footer'
+import Header from '../Header'
 
 import TripListContext from '../../context/TripListContext'
 
@@ -26,7 +27,7 @@ const travelAssistanceList = [
 
 class BookANewTrip extends Component {
   state = {
-    activeStep: stepsList[3].stepId,
+    activeStep: stepsList[0].stepId,
     name: '',
     startLocation: '',
     endLocation: '',
@@ -728,7 +729,8 @@ class BookANewTrip extends Component {
 
     return (
       <>
-        <div className="book-a-new-trip-container">
+        <Header />
+        <div className="mobile-book-a-new-trip-container">
           <ul className="hr-lines-list">
             {stepsList.map(eachStep => {
               const topHrLineActive =
@@ -742,6 +744,16 @@ class BookANewTrip extends Component {
             })}
           </ul>
           {isTripConfirmed ? this.renderConfirmedMessage() : this.renderStep()}
+        </div>
+        <div className="desktop-book-a-new-trip-container">
+          <div className="desktop-book-a-new-trip-card">
+            <div className="desktop-book-a-new-trip-card-left-container">
+              {}
+            </div>
+            <div className="desktop-book-a-new-trip-card-right-container">
+              {}
+            </div>
+          </div>
         </div>
         <Footer />
       </>
