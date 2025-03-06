@@ -1,0 +1,18 @@
+.my-trips-container {
+  height: 92vh;
+  padding: 20px;
+}
+
+.my-trips-heading {
+  font-family: Roboto;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 24.2px;
+  letter-spacing: 0px;
+  color: #334155;
+}
+
+.my-trips-list {
+  padding: 0;
+  list-style-type: none;
+}
