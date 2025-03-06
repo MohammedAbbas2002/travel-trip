@@ -126,9 +126,9 @@ class BookANewTrip extends Component {
 
     return (
       <>
-        <div className="your-details-container">
-          <h1 className="your-details-heading">Your Details</h1>
-          <p className="your-details-description">
+        <div className="mobile-your-details-container">
+          <h1 className="mobile-your-details-heading">Your Details</h1>
+          <p className="mobile-your-details-description">
             Enter your name and location details
           </p>
           <form onSubmit={this.onSubmitYourDetailsForm}>
@@ -374,9 +374,9 @@ class BookANewTrip extends Component {
 
     return (
       <>
-        <div className="date-selection-container">
-          <h1 className="date-selection-heading">Date Selection</h1>
-          <p className="date-selection-description">
+        <div className="mobile-date-selection-container">
+          <h1 className="mobile-date-selection-heading">Date Selection</h1>
+          <p className="mobile-date-selection-description">
             Select your Start and End Date.
           </p>
           <form onSubmit={this.onSubmitDateSelectionForm}>
@@ -543,9 +543,9 @@ class BookANewTrip extends Component {
 
     return (
       <>
-        <div className="guests-container">
-          <h1 className="guests-heading">Guests</h1>
-          <p className="guests-description">Select your Guests</p>
+        <div className="mobile-guests-container">
+          <h1 className="mobile-guests-heading">Guests</h1>
+          <p className="mobile-guests-description">Select your Guests</p>
           <ul className="guests-list">
             <li className="guest-item">
               <div>
@@ -755,9 +755,11 @@ class BookANewTrip extends Component {
 
     return (
       <>
-        <div className="travel-assistance-container">
-          <h1 className="travel-assistance-heading">Travel Assistance</h1>
-          <p className="travel-assistance-description">
+        <div className="mobile-travel-assistance-container">
+          <h1 className="mobile-travel-assistance-heading">
+            Travel Assistance
+          </h1>
+          <p className="mobile-travel-assistance-description">
             Select your Travel Assistance.
           </p>
           <div className="travel-assistance-checkbox-container">
@@ -957,9 +959,11 @@ class BookANewTrip extends Component {
 
           return (
             <>
-              <div className="confirmation-container">
-                <h1 className="confirmation-heading">Confirmation</h1>
-                <p className="confirmation-description">Confirm your details</p>
+              <div className="mobile-confirmation-container">
+                <h1 className="mobile-confirmation-heading">Confirmation</h1>
+                <p className="mobile-confirmation-description">
+                  Confirm your details
+                </p>
                 <ul className="confirmation-list">
                   <li className="confirmation-item">
                     <p className="confirmation-label">Name:</p>
