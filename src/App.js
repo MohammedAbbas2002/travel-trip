@@ -4,35 +4,35 @@ import {Component} from 'react'
 import Login from './components/Login'
 import Home from './components/Home'
 import BookANewTrip from './components/BookANewTrip'
+import MyTrips from './components/MyTrips'
 
-import TripListContext from './context/TripListContext'
+import TripsListContext from './context/TripsListContext'
 
 import './App.css'
 
 class App extends Component {
-  state = {tripList: []}
+  state = {tripsList: []}
 
   addTrip = trip => {
-    this.setState(prevState => ({tripList: [...prevState.tripList, trip]}))
+    this.setState(prevState => ({tripsList: [...prevState.tripsList, trip]}))
   }
 
   removeTrip = () => {}
 
   render() {
-    const {tripList} = this.state
-
-    console.log(tripList)
+    const {tripsList} = this.state
 
     return (
-      <TripListContext.Provider
-        value={{tripList, addTrip: this.addTrip, removeTrip: this.removeTrip}}
+      <TripsListContext.Provider
+        value={{tripsList, addTrip: this.addTrip, removeTrip: this.removeTrip}}
       >
         <Switch>
           <Route exact path="/login" component={Login} />
           <Route exact path="/" component={Home} />
           <Route exact path="/book-a-new-trip" component={BookANewTrip} />
+          <Route exact path="/my-trips" component={MyTrips} />
         </Switch>
-      </TripListContext.Provider>
+      </TripsListContext.Provider>
     )
   }
 }

@@ -6,7 +6,7 @@ import {v4 as uuidv4} from 'uuid'
 import Footer from '../Footer'
 import Header from '../Header'
 
-import TripListContext from '../../context/TripListContext'
+import TripsListContext from '../../context/TripsListContext'
 
 import './index.css'
 
@@ -943,7 +943,7 @@ class BookANewTrip extends Component {
     }
 
     return (
-      <TripListContext.Consumer>
+      <TripsListContext.Consumer>
         {value => {
           const {addTrip} = value
 
@@ -1072,7 +1072,7 @@ class BookANewTrip extends Component {
             </>
           )
         }}
-      </TripListContext.Consumer>
+      </TripsListContext.Consumer>
     )
   }
 
