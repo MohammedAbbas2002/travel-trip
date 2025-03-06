@@ -87,6 +87,12 @@
   margin-right: 12px;
 }
 
+.desktop-step-item-number-active {
+  color: #ffffff;
+  border: none;
+  background-color: #3b82f6;
+}
+
 .desktop-step-item-name {
   font-family: Roboto;
   font-weight: 500;
@@ -94,6 +100,10 @@
   line-height: 20px;
   letter-spacing: 0%;
   color: #334155;
+}
+
+.desktop-step-item-name-active {
+  color: #2563eb;
 }
 
 .top-hr-line-active {

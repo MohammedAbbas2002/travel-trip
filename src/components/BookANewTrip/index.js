@@ -754,10 +754,26 @@ class BookANewTrip extends Component {
                 {stepsList.map(eachStep => {
                   stepNumber += 1
 
+                  const desktopStepItemNumberActive =
+                    eachStep.stepId === activeStep
+                      ? 'desktop-step-item-number-active'
+                      : ''
+
+                  const desktopStepItemNameActive =
+                    eachStep.stepId === activeStep
+                      ? 'desktop-step-item-name-active'
+                      : ''
+
                   return (
                     <li key={eachStep.stepId} className="desktop-step-item">
-                      <p className="desktop-step-item-number">{stepNumber}</p>
-                      <p className="desktop-step-item-name">
+                      <p
+                        className={`desktop-step-item-number ${desktopStepItemNumberActive}`}
+                      >
+                        {stepNumber}
+                      </p>
+                      <p
+                        className={`desktop-step-item-name ${desktopStepItemNameActive}`}
+                      >
                         {eachStep.displayText}
                       </p>
                     </li>
