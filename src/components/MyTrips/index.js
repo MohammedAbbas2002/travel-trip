@@ -1,3 +1,5 @@
+import {Link} from 'react-router-dom'
+
 import Footer from '../Footer'
 import Header from '../Header'
 import TripItem from '../TripItem'
@@ -23,9 +25,11 @@ const MyTrips = () => (
               <p className="no-trips-description">
                 When you book a trip, you will see your trip details here.
               </p>
-              <button className="book-a-new-trip-button">
-                Book a New Trip
-              </button>
+              <Link className="link" to="/book-a-new-trip">
+                <button className="book-a-new-trip-button">
+                  Book a New Trip
+                </button>
+              </Link>
             </div>
           ) : (
             <div className="my-trips-container">
