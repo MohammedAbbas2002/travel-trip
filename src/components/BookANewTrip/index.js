@@ -28,6 +28,11 @@ const travelAssistanceList = [
 class BookANewTrip extends Component {
   state = {
     activeStep: stepsList[0].stepId,
+    isStepOneCompleted: false,
+    isStepTwoCompleted: false,
+    isStepThreeCompleted: false,
+    isStepFourCompleted: false,
+    isStepFiveCompleted: false,
     name: '',
     startLocation: '',
     endLocation: '',
@@ -65,7 +70,7 @@ class BookANewTrip extends Component {
     const {name, startLocation, endLocation} = this.state
 
     if (name !== '' && startLocation !== '' && endLocation !== '') {
-      this.setState({activeStep: stepsList[1].stepId})
+      this.setState({isStepOneCompleted: true, activeStep: stepsList[1].stepId})
     } else {
       if (name === '') {
         this.setState({isNameEmpty: true})
@@ -814,7 +819,15 @@ class BookANewTrip extends Component {
   )
 
   render() {
-    const {activeStep, isTripConfirmed} = this.state
+    const {
+      activeStep,
+      isStepOneCompleted,
+      isStepTwoCompleted,
+      isStepThreeCompleted,
+      isStepFourCompleted,
+      isStepFiveCompleted,
+      isTripConfirmed,
+    } = this.state
 
     let stepNumber = 0
 
