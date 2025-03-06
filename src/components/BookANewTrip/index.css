@@ -11,7 +11,7 @@
 
 .desktop-book-a-new-trip-container {
   background-color: #f1f5f9;
-  height: 110vh;
+  height: 120vh;
   display: flex;
   justify-content: center;
   padding: 40px;
@@ -67,6 +67,7 @@
 .desktop-step-item {
   display: flex;
   align-items: center;
+  margin-bottom: 16px;
 }
 
 .desktop-step-item-number {
@@ -78,7 +79,6 @@
   font-family: Roboto;
   font-weight: 600;
   font-size: 14px;
-  line-height: 20px;
   letter-spacing: 0%;
   color: #1e293b;
   display: flex;
@@ -87,15 +87,16 @@
   margin-right: 12px;
 }
 
-.desktop-step-item-completion-image {
-  width: 32px;
-  height: 32px;
-}
-
 .desktop-step-item-number-active {
   color: #ffffff;
   border: none;
   background-color: #3b82f6;
+}
+
+.desktop-step-item-completion-image {
+  width: 32px;
+  height: 32px;
+  margin-right: 12px;
 }
 
 .desktop-step-item-name {
@@ -130,7 +131,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  padding: 40px;
 }
 
 @media screen and (max-width: 767px) {
@@ -178,7 +179,7 @@
   letter-spacing: 0px;
   color: #f1f5f9;
   margin-top: 0;
-  margin-bottom: 20px;
+  margin-bottom: 40px;
 }
 
 .desktop-your-details-form {
@@ -312,6 +313,26 @@
   padding-top: 8px;
 }
 
+@media screen and (min-width: 768px) {
+  .date-selection-container {
+    display: none;
+  }
+}
+
+.desktop-date-selection-container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 40px;
+}
+
+@media screen and (max-width: 767px) {
+  .desktop-date-selection-container {
+    display: none;
+  }
+}
+
 .date-selection-heading {
   font-family: Roboto;
   font-weight: 600;
@@ -319,6 +340,16 @@
   line-height: 32px;
   letter-spacing: 0.1px;
   color: #334155;
+  margin-bottom: 10px;
+}
+
+.desktop-date-selection-heading {
+  font-family: Roboto;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 29.05px;
+  letter-spacing: 0px;
+  color: #f1f5f9;
   margin-bottom: 10px;
 }
 
@@ -333,8 +364,26 @@
   margin-bottom: 20px;
 }
 
+.desktop-date-selection-description {
+  font-family: Roboto;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: 0px;
+  color: #f1f5f9;
+  margin-top: 0;
+  margin-bottom: 40px;
+}
+
+.desktop-date-selection-form {
+  width: 60%;
+  background-color: #ffffff;
+  border-radius: 16px;
+  padding: 40px;
+}
+
 .start-date-input-container {
-  margin-bottom: 16px;
+  margin-top: 16px;
 }
 
 .start-date-input {
@@ -358,7 +407,7 @@
 }
 
 .end-date-input-container {
-  margin-bottom: 16px;
+  margin-top: 16px;
 }
 
 .end-date-input {
@@ -395,6 +444,7 @@
 
 .previous-and-next-button-container {
   text-align: right;
+  margin-top: 16px;
 }
 
 .previous-button {

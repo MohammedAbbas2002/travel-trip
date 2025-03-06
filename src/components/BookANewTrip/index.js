@@ -73,8 +73,13 @@ class BookANewTrip extends Component {
       this.setState({
         stepOneCompletionStatus: 'COMPLETED',
         activeStep: stepsList[1].stepId,
+        isNameEmpty: false,
+        isStartLocationEmpty: false,
+        isEndLocationEmpty: false,
       })
     } else {
+      this.setState({stepOneCompletionStatus: 'PENDING'})
+
       if (name === '') {
         this.setState({isNameEmpty: true})
       } else {
@@ -315,11 +320,20 @@ class BookANewTrip extends Component {
           isEndDateLesserThanStartDate: true,
           isEndDateEmpty: false,
           isStartDateEmpty: false,
+          stepTwoCompletionStatus: 'PENDING',
         })
       } else {
-        this.setState({activeStep: stepsList[2].stepId})
+        this.setState({
+          stepTwoCompletionStatus: 'COMPLETED',
+          activeStep: stepsList[2].stepId,
+          isEndDateEmpty: false,
+          isStartDateEmpty: false,
+          isEndDateLesserThanStartDate: false,
+        })
       }
     } else {
+      this.setState({stepTwoCompletionStatus: 'PENDING'})
+
       if (startDate === '') {
         this.setState({isStartDateEmpty: true})
       } else {
@@ -359,61 +373,121 @@ class BookANewTrip extends Component {
       : ''
 
     return (
-      <div className="date-selection-container">
-        <h1 className="date-selection-heading">Date Selection</h1>
-        <p className="date-selection-description">
-          Select your Start and End Date.
-        </p>
-        <form onSubmit={this.onSubmitDateSelectionForm}>
-          <div className="start-date-input-container">
-            <label htmlFor="startDate" className="label">
-              Start Date
-            </label>
-            <br />
-            <input
-              type="date"
-              className={`start-date-input ${startDateRedBorder} ${startDateRedPlaceholderText}`}
-              id="startDate"
-              value={startDate}
-              onChange={this.onChangeStartDate}
-            />
-          </div>
-          {isStartDateEmpty && (
-            <p className="error-message">Select start date</p>
-          )}
-          <div className="end-date-input-container">
-            <label htmlFor="endDate" className="label">
-              End Date
-            </label>
-            <br />
-            <input
-              type="date"
-              className={`end-date-input ${endDateRedBorder} ${endDateRedPlaceholderText}`}
-              id="endDate"
-              value={endDate}
-              onChange={this.onChangeEndDate}
-            />
-          </div>
-          {isEndDateEmpty && <p className="error-message">Select end date</p>}
-          {isEndDateLesserThanStartDate && (
-            <p className="error-message">
-              The end date cannot be less than the start date
-            </p>
-          )}
-          <div className="previous-and-next-button-container">
-            <button
-              type="button"
-              className="previous-button"
-              onClick={this.onGoToYourDetailsForm}
-            >
-              Previous
-            </button>
-            <button type="submit" className="next-button">
-              Next
-            </button>
-          </div>
-        </form>
-      </div>
+      <>
+        <div className="date-selection-container">
+          <h1 className="date-selection-heading">Date Selection</h1>
+          <p className="date-selection-description">
+            Select your Start and End Date.
+          </p>
+          <form onSubmit={this.onSubmitDateSelectionForm}>
+            <div className="start-date-input-container">
+              <label htmlFor="startDate" className="label">
+                Start Date
+              </label>
+              <br />
+              <input
+                type="date"
+                className={`start-date-input ${startDateRedBorder} ${startDateRedPlaceholderText}`}
+                id="startDate"
+                value={startDate}
+                onChange={this.onChangeStartDate}
+              />
+            </div>
+            {isStartDateEmpty && (
+              <p className="error-message">Select start date</p>
+            )}
+            <div className="end-date-input-container">
+              <label htmlFor="endDate" className="label">
+                End Date
+              </label>
+              <br />
+              <input
+                type="date"
+                className={`end-date-input ${endDateRedBorder} ${endDateRedPlaceholderText}`}
+                id="endDate"
+                value={endDate}
+                onChange={this.onChangeEndDate}
+              />
+            </div>
+            {isEndDateEmpty && <p className="error-message">Select end date</p>}
+            {isEndDateLesserThanStartDate && (
+              <p className="error-message">
+                The end date cannot be less than the start date
+              </p>
+            )}
+            <div className="previous-and-next-button-container">
+              <button
+                type="button"
+                className="previous-button"
+                onClick={this.onGoToYourDetailsForm}
+              >
+                Previous
+              </button>
+              <button type="submit" className="next-button">
+                Next
+              </button>
+            </div>
+          </form>
+        </div>
+        <div className="desktop-date-selection-container">
+          <h1 className="desktop-date-selection-heading">Date Selection</h1>
+          <p className="desktop-date-selection-description">
+            Select your Start and End Date.
+          </p>
+          <form
+            className="desktop-date-selection-form"
+            onSubmit={this.onSubmitDateSelectionForm}
+          >
+            <div className="start-date-input-container">
+              <label htmlFor="startDate" className="label">
+                Start Date
+              </label>
+              <br />
+              <input
+                type="date"
+                className={`start-date-input ${startDateRedBorder} ${startDateRedPlaceholderText}`}
+                id="startDate"
+                value={startDate}
+                onChange={this.onChangeStartDate}
+              />
+            </div>
+            {isStartDateEmpty && (
+              <p className="error-message">Select start date</p>
+            )}
+            <div className="end-date-input-container">
+              <label htmlFor="endDate" className="label">
+                End Date
+              </label>
+              <br />
+              <input
+                type="date"
+                className={`end-date-input ${endDateRedBorder} ${endDateRedPlaceholderText}`}
+                id="endDate"
+                value={endDate}
+                onChange={this.onChangeEndDate}
+              />
+            </div>
+            {isEndDateEmpty && <p className="error-message">Select end date</p>}
+            {isEndDateLesserThanStartDate && (
+              <p className="error-message">
+                The end date cannot be less than the start date
+              </p>
+            )}
+            <div className="previous-and-next-button-container">
+              <button
+                type="button"
+                className="previous-button"
+                onClick={this.onGoToYourDetailsForm}
+              >
+                Previous
+              </button>
+              <button type="submit" className="next-button">
+                Next
+              </button>
+            </div>
+          </form>
+        </div>
+      </>
     )
   }
 
@@ -899,11 +973,18 @@ class BookANewTrip extends Component {
 
                   return (
                     <li key={eachStep.stepId} className="desktop-step-item">
-                      <p
-                        className={`desktop-step-item-number ${desktopStepItemNumberActive}`}
-                      >
-                        {stepNumber}
-                      </p>
+                      {eachStep.completionStatus === 'COMPLETED' ? (
+                        <img
+                          src="https://assets.ccbp.in/frontend/react-js/travel-trip-steps-successfully-completed-img.png"
+                          className="desktop-step-item-completion-image"
+                        />
+                      ) : (
+                        <p
+                          className={`desktop-step-item-number ${desktopStepItemNumberActive}`}
+                        >
+                          {stepNumber}
+                        </p>
+                      )}
                       <p
                         className={`desktop-step-item-name ${desktopStepItemNameActive}`}
                       >
