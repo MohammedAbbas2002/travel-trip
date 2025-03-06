@@ -40,6 +40,7 @@ class BookANewTrip extends Component {
     infantsCount: 0,
     isTravelAssistanceChecked: false,
     travelAssistance: '',
+    isTripConfirmed: false,
   }
 
   onChangeName = event => {
@@ -567,7 +568,9 @@ class BookANewTrip extends Component {
     })
   }
 
-  onConfirmTrip = () => {}
+  onConfirmTrip = () => {
+    this.setState({isTripConfirmed: true})
+  }
 
   renderConfirmationView = () => {
     const {
@@ -653,8 +656,22 @@ class BookANewTrip extends Component {
     }
   }
 
+  renderConfirmedMessage = () => (
+    <div className="confirmed-message-container">
+      <img
+        src="https://assets.ccbp.in/frontend/react-js/travel-trip-steps-successfully-completed-img.png"
+        className="confirmed-message-image"
+      />
+      <h1 className="confirmed-message-heading">Awesome</h1>
+      <p className="confirmed-message-description">
+        Your booking has been confirmed.
+      </p>
+      <button className="book-a-new-trip-button">Book a New Trip</button>
+    </div>
+  )
+
   render() {
-    const {activeStep} = this.state
+    const {activeStep, isTripConfirmed} = this.state
 
     return (
       <>
@@ -671,7 +688,7 @@ class BookANewTrip extends Component {
               )
             })}
           </ul>
-          {this.renderStep()}
+          {isTripConfirmed ? this.renderConfirmedMessage() : this.renderStep()}
         </div>
         <Footer />
       </>
