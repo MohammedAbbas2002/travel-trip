@@ -727,6 +727,8 @@ class BookANewTrip extends Component {
   render() {
     const {activeStep, isTripConfirmed} = this.state
 
+    let stepNumber = 0
+
     return (
       <>
         <Header />
@@ -748,7 +750,20 @@ class BookANewTrip extends Component {
         <div className="desktop-book-a-new-trip-container">
           <div className="desktop-book-a-new-trip-card">
             <div className="desktop-book-a-new-trip-card-left-container">
-              {}
+              <ul className="desktop-steps-list">
+                {stepsList.map(eachStep => {
+                  stepNumber += 1
+
+                  return (
+                    <li key={eachStep.stepId} className="desktop-step-item">
+                      <p className="desktop-step-item-number">{stepNumber}</p>
+                      <p className="desktop-step-item-name">
+                        {eachStep.displayText}
+                      </p>
+                    </li>
+                  )
+                })}
+              </ul>
             </div>
             <div className="desktop-book-a-new-trip-card-right-container">
               {}
