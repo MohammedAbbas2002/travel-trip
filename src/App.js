@@ -11,7 +11,28 @@ import TripsListContext from './context/TripsListContext'
 import './App.css'
 
 class App extends Component {
-  state = {tripsList: []}
+  state = {
+    tripsList: [
+      {
+        id: 1,
+        endLocation: 'Vizag',
+        startDate: '2025-03-10',
+        endDate: '2025-03-20',
+      },
+      {
+        id: 2,
+        endLocation: 'Vizag',
+        startDate: '2025-03-10',
+        endDate: '2025-03-20',
+      },
+      {
+        id: 2,
+        endLocation: 'Vizag',
+        startDate: '2025-03-10',
+        endDate: '2025-03-20',
+      },
+    ],
+  }
 
   addTrip = trip => {
     this.setState(prevState => ({tripsList: [...prevState.tripsList, trip]}))
