@@ -15,6 +15,7 @@ const MyTrips = () => (
 
       return (
         <>
+          <Header />
           {tripsList.length === 0 ? (
             <div className="no-trips-container">
               <img
@@ -32,14 +33,24 @@ const MyTrips = () => (
               </Link>
             </div>
           ) : (
-            <div className="my-trips-container">
-              <h1 className="my-trips-heading">My Trips</h1>
-              <ul className="my-trips-list">
-                {tripsList.map(eachTrip => (
-                  <TripItem key={eachTrip.id} tripDetails={eachTrip} />
-                ))}
-              </ul>
-            </div>
+            <>
+              <div className="mobile-my-trips-container">
+                <h1 className="my-trips-heading">My Trips</h1>
+                <ul className="my-trips-list">
+                  {tripsList.map(eachTrip => (
+                    <TripItem key={eachTrip.id} tripDetails={eachTrip} />
+                  ))}
+                </ul>
+              </div>
+              <div className="desktop-my-trips-container">
+                <h1 className="my-trips-heading">My Trips</h1>
+                <ul className="my-trips-list">
+                  {tripsList.map(eachTrip => (
+                    <TripItem key={eachTrip.id} tripDetails={eachTrip} />
+                  ))}
+                </ul>
+              </div>
+            </>
           )}
           <Footer />
         </>

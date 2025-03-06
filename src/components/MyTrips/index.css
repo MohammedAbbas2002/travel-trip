@@ -1,6 +1,25 @@
-.my-trips-container {
+.mobile-my-trips-container {
   min-height: 92vh;
   padding: 20px;
+}
+
+@media screen and (min-width: 768px) {
+  .mobile-my-trips-container {
+    display: none;
+  }
+}
+
+.desktop-my-trips-container {
+  min-height: 92vh;
+  padding: 30px;
+  padding-left: 140px;
+  padding-right: 140px;
+}
+
+@media screen and (max-width: 767px) {
+  .desktop-my-trips-container {
+    display: none;
+  }
 }
 
 .my-trips-heading {
