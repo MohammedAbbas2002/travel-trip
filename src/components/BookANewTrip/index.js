@@ -1,6 +1,7 @@
 import {Component} from 'react'
 import {MdErrorOutline} from 'react-icons/md'
 import {FaPlus, FaMinus} from 'react-icons/fa6'
+import {v4 as uuidv4} from 'uuid'
 
 import Footer from '../Footer'
 
@@ -600,7 +601,7 @@ class BookANewTrip extends Component {
           const {addTrip} = value
 
           const onConfirmTrip = () => {
-            addTrip({endLocation, startDate, endDate})
+            addTrip({id: uuidv4(), endLocation, startDate, endDate})
 
             this.setState({isTripConfirmed: true, activeStep: null})
           }

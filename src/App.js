@@ -21,6 +21,8 @@ class App extends Component {
   render() {
     const {tripList} = this.state
 
+    console.log(tripList)
+
     return (
       <TripListContext.Provider
         value={{tripList, addTrip: this.addTrip, removeTrip: this.removeTrip}}
