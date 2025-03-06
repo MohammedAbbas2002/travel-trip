@@ -1125,7 +1125,7 @@ class BookANewTrip extends Component {
 
   renderConfirmedMessage = () => (
     <>
-      <div className="confirmed-message-container">
+      <div className="mobile-confirmed-message-container">
         <img
           src="https://assets.ccbp.in/frontend/react-js/travel-trip-steps-successfully-completed-img.png"
           className="confirmed-message-image"
@@ -1207,14 +1207,18 @@ class BookANewTrip extends Component {
       <>
         <Header />
         <div className="mobile-book-a-new-trip-container">
-          <ul className="hr-lines-list">
+          <ul className="mobile-hr-lines-list">
             {stepsList.map(eachStep => {
-              const topHrLineActive =
-                eachStep.stepId === activeStep ? 'top-hr-line-active' : ''
+              const mobileTopHrLineActive =
+                eachStep.stepId === activeStep
+                  ? 'mobile-top-hr-line-active'
+                  : ''
 
               return (
                 <li key={eachStep.stepId}>
-                  <hr className={`top-hr-line ${topHrLineActive}`} />
+                  <hr
+                    className={`mobile-top-hr-line ${mobileTopHrLineActive}`}
+                  />
                 </li>
               )
             })}

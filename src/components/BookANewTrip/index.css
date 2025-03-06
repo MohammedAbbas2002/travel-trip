@@ -44,7 +44,7 @@
   border-bottom-right-radius: 16px;
 }
 
-.hr-lines-list {
+.mobile-hr-lines-list {
   padding: 0;
   list-style-type: none;
   display: flex;
@@ -59,7 +59,7 @@
   margin-top: 32px;
 }
 
-.top-hr-line {
+.mobile-top-hr-line {
   width: 59.2px;
   border-radius: 12px;
   border: 2px solid #e7e7e7;
@@ -114,7 +114,7 @@
   color: #2563eb;
 }
 
-.top-hr-line-active {
+.mobile-top-hr-line-active {
   border: 2px solid #2563eb;
 }
 
@@ -907,7 +907,7 @@
   margin-top: 8px;
 }
 
-.confirmed-message-container {
+.mobile-confirmed-message-container {
   height: 100%;
   display: flex;
   flex-direction: column;
@@ -916,7 +916,7 @@
 }
 
 @media screen and (min-width: 768px) {
-  .confirmed-message-container {
+  .mobile-confirmed-message-container {
     display: none;
   }
 }
