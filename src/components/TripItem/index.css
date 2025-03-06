@@ -1,6 +1,5 @@
 .my-trip-item {
-  width: 100%;
-  border: 1px solid #3047665E;
+  border: 1px solid #3047665e;
   border-radius: 16px;
   padding: 20px;
   margin-bottom: 20px;
@@ -32,7 +31,7 @@
   font-size: 16px;
   line-height: 24px;
   letter-spacing: 0.2px;
-  color: #0F0F0FCC;
+  color: #0f0f0fcc;
   margin-top: 0;
 }
 

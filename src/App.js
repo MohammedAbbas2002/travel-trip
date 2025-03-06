@@ -26,7 +26,7 @@ class App extends Component {
         endDate: '2025-03-20',
       },
       {
-        id: 2,
+        id: 3,
         endLocation: 'Vizag',
         startDate: '2025-03-10',
         endDate: '2025-03-20',
@@ -38,7 +38,13 @@ class App extends Component {
     this.setState(prevState => ({tripsList: [...prevState.tripsList, trip]}))
   }
 
-  removeTrip = () => {}
+  removeTrip = id => {
+    const {tripsList} = this.state
+
+    const updatedTripsList = tripsList.filter(eachTrip => eachTrip.id !== id)
+
+    this.setState({tripsList: updatedTripsList})
+  }
 
   render() {
     const {tripsList} = this.state

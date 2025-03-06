@@ -12,6 +12,10 @@ const TripItem = props => {
       {value => {
         const {removeTrip} = value
 
+        const onRemoveTrip = () => {
+          removeTrip(id)
+        }
+
         return (
           <li className="my-trip-item">
             <h1 className="my-trip-item-location">{endLocation}</h1>
@@ -19,7 +23,11 @@ const TripItem = props => {
             <p className="my-trip-item-date">
               {startDate} to {endDate}
             </p>
-            <button type="button" className="my-trip-item-cancel-button">
+            <button
+              type="button"
+              className="my-trip-item-cancel-button"
+              onClick={onRemoveTrip}
+            >
               Cancel
             </button>
           </li>
