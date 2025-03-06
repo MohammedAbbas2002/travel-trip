@@ -17,21 +17,38 @@ const MyTrips = () => (
         <>
           <Header />
           {tripsList.length === 0 ? (
-            <div className="no-trips-container">
-              <img
-                src="https://res.cloudinary.com/dt7mi4nem/image/upload/v1741297116/Frame_1000003903_1_eqfbo7.png"
-                className="no-trips-image"
-              />
-              <h1 className="no-trips-heading">No upcoming trips.</h1>
-              <p className="no-trips-description">
-                When you book a trip, you will see your trip details here.
-              </p>
-              <Link className="link" to="/book-a-new-trip">
-                <button className="book-a-new-trip-button">
-                  Book a New Trip
-                </button>
-              </Link>
-            </div>
+            <>
+              <div className="mobile-no-trips-container">
+                <img
+                  src="https://res.cloudinary.com/dt7mi4nem/image/upload/v1741297116/Frame_1000003903_1_eqfbo7.png"
+                  className="no-trips-image"
+                />
+                <h1 className="mobile-no-trips-heading">No upcoming trips.</h1>
+                <p className="mobile-no-trips-description">
+                  When you book a trip, you will see your trip details here.
+                </p>
+                <Link className="link" to="/book-a-new-trip">
+                  <button className="book-a-new-trip-button">
+                    Book a New Trip
+                  </button>
+                </Link>
+              </div>
+              <div className="desktop-no-trips-container">
+                <img
+                  src="https://res.cloudinary.com/dt7mi4nem/image/upload/v1741297116/Frame_1000003903_1_eqfbo7.png"
+                  className="no-trips-image"
+                />
+                <h1 className="desktop-no-trips-heading">No upcoming trips.</h1>
+                <p className="desktop-no-trips-description">
+                  When you book a trip, you will see your trip details here.
+                </p>
+                <Link className="link" to="/book-a-new-trip">
+                  <button className="book-a-new-trip-button">
+                    Book a New Trip
+                  </button>
+                </Link>
+              </div>
+            </>
           ) : (
             <>
               <div className="mobile-my-trips-container">

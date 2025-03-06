@@ -10,7 +10,6 @@
 }
 
 .desktop-my-trips-container {
-  min-height: 92vh;
   padding: 30px;
   padding-left: 140px;
   padding-right: 140px;
@@ -37,7 +36,7 @@
   list-style-type: none;
 }
 
-.no-trips-container {
+.mobile-no-trips-container {
   height: 92vh;
   display: flex;
   flex-direction: column;
@@ -46,13 +45,34 @@
   padding: 40px;
 }
 
+@media screen and (min-width: 768px) {
+  .mobile-no-trips-container {
+    display: none;
+  }
+}
+
+.desktop-no-trips-container {
+  min-height: 80vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 40px;
+}
+
+@media screen and (max-width: 767px) {
+  .desktop-no-trips-container {
+    display: none;
+  }
+}
+
 .no-trips-image {
   width: 63px;
   height: 75px;
   margin-bottom: 10px;
 }
 
-.no-trips-heading {
+.mobile-no-trips-heading {
   font-family: Roboto;
   font-weight: 500;
   font-size: 16px;
@@ -62,10 +82,31 @@
   margin-bottom: 0;
 }
 
-.no-trips-description {
+.desktop-no-trips-heading {
+  font-family: Roboto;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 32px;
+  letter-spacing: 0.1px;
+  color: #191919;
+  margin-bottom: 0;
+}
+
+.mobile-no-trips-description {
   font-family: Roboto;
   font-weight: 400;
   font-size: 14px;
+  line-height: 24px;
+  letter-spacing: 0.1px;
+  color: #191919cc;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.desktop-no-trips-description {
+  font-family: Roboto;
+  font-weight: 400;
+  font-size: 16px;
   line-height: 24px;
   letter-spacing: 0.1px;
   color: #191919cc;
