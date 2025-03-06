@@ -34,12 +34,12 @@
   letter-spacing: 0.1px;
   text-align: center;
   color: #334155;
-  margin-bottom: 40px;
+  margin-bottom: 20px;
   margin-top: 0;
 }
 
 .username-input-container {
-  margin-bottom: 20px;
+  margin-top: 20px;
 }
 
 .label {
@@ -64,7 +64,7 @@
   padding-left: 12px;
   gap: 24px;
   border: 1px solid #64748b;
-  margin-top: 8px;
+  margin-top: 6px;
   font-family: Roboto;
   font-weight: 400;
   font-size: 14px;
@@ -81,7 +81,7 @@
 }
 
 .password-input-container {
-  margin-bottom: 20px;
+  margin-top: 20px;
 }
 
 .password-input-and-show-password-button-container {
@@ -96,7 +96,7 @@
   padding-bottom: 8px;
   padding-left: 12px;
   border: 1px solid #64748b;
-  margin-top: 8px;
+  margin-top: 6px;
 }
 
 @media screen and (min-width: 768px) {
@@ -146,7 +146,7 @@
   letter-spacing: 0.2px;
   color: #ffffff;
   border: none;
-  margin-top: 10px;
+  margin-top: 30px;
   cursor: pointer;
   outline: none;
 }
@@ -164,5 +164,6 @@
   line-height: 18.23px;
   letter-spacing: 0.2px;
   color: #ef4444;
-  margin-top: 0;
+  margin-top: 4px;
+  margin-bottom: 0;
 }

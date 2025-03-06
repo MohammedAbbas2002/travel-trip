@@ -202,6 +202,87 @@ class BookANewTrip extends Component {
           <p className="desktop-your-details-description">
             Enter your name and location details
           </p>
+          <form
+            className="desktop-your-details-form"
+            onSubmit={this.onSubmitYourDetailsForm}
+          >
+            <div className="name-input-container">
+              <label htmlFor="name" className="label">
+                Name
+              </label>
+              <br />
+              <div
+                className={`name-input-and-error-icon-container ${nameRedBorder}`}
+              >
+                <input
+                  type="text"
+                  placeholder="Enter name"
+                  className={`name-input ${nameRedPlaceholderText}`}
+                  id="name"
+                  value={name}
+                  onChange={this.onChangeName}
+                />
+                {isNameEmpty && <MdErrorOutline size="20" color="#ef4444" />}
+              </div>
+            </div>
+            {isNameEmpty && <p className="error-message">Enter your name</p>}
+
+            <div className="start-location-input-container">
+              <label htmlFor="startLocation" className="label">
+                Start location
+              </label>
+              <br />
+              <div
+                className={`start-location-input-and-error-icon-container ${startLocationRedBorder}`}
+              >
+                <input
+                  type="text"
+                  placeholder="Enter name"
+                  className={`start-location-input ${startLocationRedPlaceholderText}`}
+                  id="startLocation"
+                  value={startLocation}
+                  onChange={this.onChangeStartLocation}
+                />
+                {isStartLocationEmpty && (
+                  <MdErrorOutline size="20" color="#ef4444" />
+                )}
+              </div>
+            </div>
+            {isStartLocationEmpty && (
+              <p className="error-message">Enter your start location</p>
+            )}
+
+            <div className="end-location-input-container">
+              <label htmlFor="endLocation" className="label">
+                End location
+              </label>
+              <br />
+              <div
+                className={`end-location-input-and-error-icon-container ${endLocationRedBorder}`}
+              >
+                <input
+                  type="text"
+                  placeholder="Enter end location"
+                  className={`end-location-input ${endLocationRedPlaceholderText}`}
+                  id="endLocation"
+                  value={endLocation}
+                  onChange={this.onChangeEndLocation}
+                />
+                {isEndLocationEmpty && (
+                  <MdErrorOutline size="20" color="#ef4444" />
+                )}
+              </div>
+            </div>
+            {isEndLocationEmpty && (
+              <p className="error-message">Enter your end location</p>
+            )}
+
+            <div className="next-button-container">
+              <button type="submit" className="next-button">
+                Next
+              </button>
+            </div>
+          </form>
         </div>
       </>
     )
