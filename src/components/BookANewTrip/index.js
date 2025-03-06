@@ -27,7 +27,7 @@ const travelAssistanceList = [
 
 class BookANewTrip extends Component {
   state = {
-    activeStep: stepsList[4].stepId,
+    activeStep: stepsList[0].stepId,
     stepOneCompletionStatus: 'PENDING',
     stepTwoCompletionStatus: 'PENDING',
     stepThreeCompletionStatus: 'PENDING',
@@ -290,7 +290,7 @@ class BookANewTrip extends Component {
               <p className="error-message">Enter your end location</p>
             )}
 
-            <div className="next-button-container">
+            <div className="desktop-next-button-container">
               <button type="submit" className="next-button">
                 Next
               </button>
@@ -473,7 +473,7 @@ class BookANewTrip extends Component {
                 The end date cannot be less than the start date
               </p>
             )}
-            <div className="previous-and-next-button-container">
+            <div className="desktop-previous-and-next-button-container">
               <button
                 type="button"
                 className="previous-button"
@@ -700,7 +700,7 @@ class BookANewTrip extends Component {
                 </div>
               </li>
             </ul>
-            <div className="previous-and-next-button-container">
+            <div className="desktop-previous-and-next-button-container">
               <button
                 type="button"
                 className="previous-button"
@@ -868,7 +868,7 @@ class BookANewTrip extends Component {
               </div>
             )}
 
-            <div className="previous-and-next-button-container">
+            <div className="desktop-previous-and-next-button-container">
               <button
                 type="button"
                 className="previous-button"
@@ -1014,7 +1014,7 @@ class BookANewTrip extends Component {
                 <p className="desktop-confirmation-description">
                   Confirm your details
                 </p>
-                <div className="confirmation-list-and-cancel-and-confirm-button-container">
+                <div className="desktop-confirmation-list-and-cancel-and-confirm-button-container">
                   <ul className="desktop-confirmation-list">
                     <li className="confirmation-item">
                       <p className="confirmation-label">Name:</p>
@@ -1094,6 +1094,11 @@ class BookANewTrip extends Component {
   onBookANewTrip = () => {
     this.setState({
       activeStep: stepsList[0].stepId,
+      stepOneCompletionStatus: 'PENDING',
+      stepTwoCompletionStatus: 'PENDING',
+      stepThreeCompletionStatus: 'PENDING',
+      stepFourCompletionStatus: 'PENDING',
+      stepFiveCompletionStatus: 'PENDING',
       name: '',
       startLocation: '',
       endLocation: '',
@@ -1133,20 +1138,22 @@ class BookANewTrip extends Component {
         </button>
       </div>
       <div className="desktop-confirmed-message-container">
-        <img
-          src="https://assets.ccbp.in/frontend/react-js/travel-trip-steps-successfully-completed-img.png"
-          className="confirmed-message-image"
-        />
-        <h1 className="confirmed-message-heading">Awesome</h1>
-        <p className="confirmed-message-description">
-          Your booking has been confirmed.
-        </p>
-        <button
-          className="book-a-new-trip-button"
-          onClick={this.onBookANewTrip}
-        >
-          Book a New Trip
-        </button>
+        <div className="desktop-confirmed-message-card">
+          <img
+            src="https://assets.ccbp.in/frontend/react-js/travel-trip-steps-successfully-completed-img.png"
+            className="confirmed-message-image"
+          />
+          <h1 className="confirmed-message-heading">Awesome</h1>
+          <p className="confirmed-message-description">
+            Your booking has been confirmed.
+          </p>
+          <button
+            className="book-a-new-trip-button"
+            onClick={this.onBookANewTrip}
+          >
+            Book a New Trip
+          </button>
+        </div>
       </div>
     </>
   )
