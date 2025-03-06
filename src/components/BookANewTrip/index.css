@@ -56,6 +56,7 @@
   padding: 0;
   list-style-type: none;
   width: 166px;
+  margin-top: 32px;
 }
 
 .top-hr-line {
@@ -67,7 +68,8 @@
 .desktop-step-item {
   display: flex;
   align-items: center;
-  margin-bottom: 16px;
+  margin-bottom: 40px;
+  height: 32px;
 }
 
 .desktop-step-item-number {

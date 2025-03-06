@@ -935,7 +935,7 @@ class BookANewTrip extends Component {
       eachTravelAssistance => eachTravelAssistance.value === travelAssistance,
     )
 
-    let travelAssistanceDisplayText = ''
+    let travelAssistanceDisplayText = '-'
     if (travelAssistanceItem !== undefined) {
       travelAssistanceDisplayText = travelAssistanceItem.displayText
     }
