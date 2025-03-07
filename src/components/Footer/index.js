@@ -1,36 +1,41 @@
 import {AiOutlineHome} from 'react-icons/ai'
 import {RiSuitcase2Line} from 'react-icons/ri'
 import {BiLogOut} from 'react-icons/bi'
-import {Link} from 'react-router-dom'
+import {Link, withRouter} from 'react-router-dom'
+import Cookies from 'js-cookie'
 
 import './index.css'
 
-const Footer = () => (
-  <nav className="footer-navbar">
-    <ul className="footer-navbar-list">
-      <li>
-        <Link to="/" className="link">
-          <button className="footer-navbar-item-icon-button">
+const Footer = props => {
+  const onLogout = () => {
+    Cookies.remove('jwt_token')
+
+    const {history} = props
+
+    history.replace('/login')
+  }
+
+  return (
+    <nav className="footer-navbar">
+      <ul className="footer-navbar-list">
+        <li>
+          <Link to="/" className="link">
             <AiOutlineHome color="#7A8493" size="20" />
-          </button>
-        </Link>
-      </li>
-      <li>
-        <Link to="/my-trips" className="link">
-          <button className="footer-navbar-item-icon-button">
+          </Link>
+        </li>
+        <li>
+          <Link to="/my-trips" className="link">
             <RiSuitcase2Line color="#7A8493" size="20" />
-          </button>
-        </Link>
-      </li>
-      <li>
-        <Link to="/" className="link">
-          <button className="footer-navbar-item-icon-button">
+          </Link>
+        </li>
+        <li>
+          <button className="footer-navbar-item-icon-button" onClick={onLogout}>
             <BiLogOut color="#7A8493" size="20" />
           </button>
-        </Link>
-      </li>
-    </ul>
-  </nav>
-)
+        </li>
+      </ul>
+    </nav>
+  )
+}
 
-export default Footer
+export default withRouter(Footer)
