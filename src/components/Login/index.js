@@ -119,6 +119,7 @@ class Login extends Component {
                   type="button"
                   className="show-password-button"
                   onClick={this.onToggleShowPassword}
+                  data-testid="show-password"
                 >
                   {isShowPassword ? (
                     <BiHide size="20" color="#64748B" />

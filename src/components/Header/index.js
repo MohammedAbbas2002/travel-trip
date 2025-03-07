@@ -22,7 +22,9 @@ const Header = props => {
 
   return (
     <nav className="header-navbar">
-      <h1 className="header-navbar-website-logo">Travel Trip</h1>
+      <Link to="/" className="link">
+        <h1 className="header-navbar-website-logo">Travel Trip</h1>
+      </Link>
       <ul className="header-navbar-list">
         <Link to="/" className="link">
           <li className={`header-navbar-item ${activeNavbarItemHome}`}>Home</li>
