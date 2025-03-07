@@ -1,6 +1,7 @@
 import {Component} from 'react'
 import {BiShow, BiHide} from 'react-icons/bi'
 import Cookies from 'js-cookie'
+import {Redirect} from 'react-router-dom'
 
 import './index.css'
 
@@ -67,6 +68,12 @@ class Login extends Component {
   }
 
   render() {
+    const jwtToken = Cookies.get('jwt_token')
+
+    if (jwtToken !== undefined) {
+      return <Redirect to="/" />
+    }
+
     const {
       username,
       password,
