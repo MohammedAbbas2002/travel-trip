@@ -15,7 +15,7 @@ const MyTrips = () => (
 
       return (
         <>
-          <Header />
+          <Header activeNavbarItem="MY_TRIPS" />
           {tripsList.length === 0 ? (
             <>
               <div className="mobile-no-trips-container">
@@ -69,7 +69,7 @@ const MyTrips = () => (
               </div>
             </>
           )}
-          <Footer />
+          <Footer activeNavbarItem="MY_TRIPS" />
         </>
       )
     }}

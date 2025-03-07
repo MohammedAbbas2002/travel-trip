@@ -12,15 +12,25 @@ const Header = props => {
     history.replace('/login')
   }
 
+  const {activeNavbarItem} = props
+
+  const activeNavbarItemHome =
+    activeNavbarItem === 'HOME' ? 'active-navbar-item-home' : ''
+
+  const activeNavbarItemMyTrips =
+    activeNavbarItem === 'MY_TRIPS' ? 'active-navbar-item-my-trips' : ''
+
   return (
     <nav className="header-navbar">
       <h1 className="header-navbar-website-logo">Travel Trip</h1>
       <ul className="header-navbar-list">
         <Link to="/" className="link">
-          <li className="header-navbar-item">Home</li>
+          <li className={`header-navbar-item ${activeNavbarItemHome}`}>Home</li>
         </Link>
         <Link to="/my-trips" className="link">
-          <li className="header-navbar-item">My Trips</li>
+          <li className={`header-navbar-item ${activeNavbarItemMyTrips}`}>
+            My Trips
+          </li>
         </Link>
       </ul>
       <button className="header-navbar-logout-button" onClick={onLogout}>

@@ -15,17 +15,25 @@ const Footer = props => {
     history.replace('/login')
   }
 
+  const {activeNavbarItem} = props
+
+  const activeHomeIconColor =
+    activeNavbarItem === 'HOME' ? '#2563EB' : '#7A8493'
+
+  const activeMyTripsIconColor =
+    activeNavbarItem === 'MY_TRIPS' ? '#2563EB' : '#7A8493'
+
   return (
     <nav className="footer-navbar">
       <ul className="footer-navbar-list">
         <li>
           <Link to="/" className="link">
-            <AiOutlineHome color="#7A8493" size="20" />
+            <AiOutlineHome color={activeHomeIconColor} size="20" />
           </Link>
         </li>
         <li>
           <Link to="/my-trips" className="link">
-            <RiSuitcase2Line color="#7A8493" size="20" />
+            <RiSuitcase2Line color={activeMyTripsIconColor} size="20" />
           </Link>
         </li>
         <li>

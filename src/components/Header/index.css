@@ -41,6 +41,14 @@
   margin-left: 20px;
 }
 
+.active-navbar-item-home {
+  font-weight: 700;
+}
+
+.active-navbar-item-my-trips {
+  font-weight: 700;
+}
+
 .header-navbar-logout-button {
   width: 103px;
   height: 48px;

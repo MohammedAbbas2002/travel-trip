@@ -28,9 +28,9 @@ const Home = () => (
         </Link>
       </div>
     </div>
-    <Footer />
+    <Footer activeNavbarItem="HOME" />
     {/* Desktop Device */}
-    <Header />
+    <Header activeNavbarItem="HOME" />
     <div className="desktop-home-container">
       <div className="desktop-home-content-container">
         <h1 className="desktop-home-heading">Travel. Relax. Memories.</h1>
