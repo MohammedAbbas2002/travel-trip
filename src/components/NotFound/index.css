@@ -1,0 +1,12 @@
+.mobile-not-found-container {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.not-found-image {
+  width: 212px;
+  height: 177px;
+}
