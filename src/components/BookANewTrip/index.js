@@ -1129,6 +1129,7 @@ class BookANewTrip extends Component {
         <img
           src="https://assets.ccbp.in/frontend/react-js/travel-trip-steps-successfully-completed-img.png"
           className="confirmed-message-image"
+          alt="success"
         />
         <h1 className="confirmed-message-heading">Awesome</h1>
         <p className="confirmed-message-description">
@@ -1146,6 +1147,7 @@ class BookANewTrip extends Component {
           <img
             src="https://assets.ccbp.in/frontend/react-js/travel-trip-steps-successfully-completed-img.png"
             className="confirmed-message-image"
+            alt="success"
           />
           <h1 className="confirmed-message-heading">Awesome</h1>
           <p className="confirmed-message-description">
@@ -1248,6 +1250,7 @@ class BookANewTrip extends Component {
                         <img
                           src="https://assets.ccbp.in/frontend/react-js/travel-trip-steps-successfully-completed-img.png"
                           className="desktop-step-item-completion-image"
+                          alt={eachStep.displayText}
                         />
                       ) : (
                         <p
