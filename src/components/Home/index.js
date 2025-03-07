@@ -22,7 +22,7 @@ const Home = () => (
       </p>
       <div className="mobile-home-book-a-new-trip-button-container">
         <Link to="/book-a-new-trip" className="link">
-          <button className="mobile-home-book-a-new-trip-button">
+          <button type="button" className="mobile-home-book-a-new-trip-button">
             Book a New Trip
           </button>
         </Link>
@@ -39,7 +39,7 @@ const Home = () => (
           destinations.
         </p>
         <Link to="/book-a-new-trip" className="link">
-          <button className="desktop-home-book-a-new-trip-button">
+          <button type="button" className="desktop-home-book-a-new-trip-button">
             Book a New Trip
           </button>
         </Link>

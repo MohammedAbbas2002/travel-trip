@@ -37,7 +37,11 @@ const Footer = props => {
           </Link>
         </li>
         <li>
-          <button className="footer-navbar-item-icon-button" onClick={onLogout}>
+          <button
+            type="button"
+            className="footer-navbar-item-icon-button"
+            onClick={onLogout}
+          >
             <BiLogOut color="#7A8493" size="20" />
           </button>
         </li>

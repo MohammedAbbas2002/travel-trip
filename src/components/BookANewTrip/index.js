@@ -554,6 +554,7 @@ class BookANewTrip extends Component {
               </div>
               <div className="guest-item-buttons-container">
                 <button
+                  type="button"
                   className="guest-item-decrement-button"
                   onClick={this.onDecrementAdultsCount}
                 >
@@ -561,6 +562,7 @@ class BookANewTrip extends Component {
                 </button>
                 <p className="guest-item-count">{adultsCount}</p>
                 <button
+                  type="button"
                   className="guest-item-increment-button"
                   onClick={this.onIncrementAdultsCount}
                 >
@@ -576,6 +578,7 @@ class BookANewTrip extends Component {
               </div>
               <div className="guest-item-buttons-container">
                 <button
+                  type="button"
                   className="guest-item-decrement-button"
                   onClick={this.onDecrementChildrenCount}
                 >
@@ -583,6 +586,7 @@ class BookANewTrip extends Component {
                 </button>
                 <p className="guest-item-count">{childrenCount}</p>
                 <button
+                  type="button"
                   className="guest-item-increment-button"
                   onClick={this.onIncrementChildrenCount}
                 >
@@ -598,6 +602,7 @@ class BookANewTrip extends Component {
               </div>
               <div className="guest-item-buttons-container">
                 <button
+                  type="button"
                   className="guest-item-decrement-button"
                   onClick={this.onDecrementInfantsCount}
                 >
@@ -605,6 +610,7 @@ class BookANewTrip extends Component {
                 </button>
                 <p className="guest-item-count">{infantsCount}</p>
                 <button
+                  type="button"
                   className="guest-item-increment-button"
                   onClick={this.onIncrementInfantsCount}
                 >
@@ -622,6 +628,7 @@ class BookANewTrip extends Component {
               Previous
             </button>
             <button
+              type="button"
               onClick={this.onGoToTravelAssistanceForm}
               className="next-button"
             >
@@ -641,6 +648,7 @@ class BookANewTrip extends Component {
                 </div>
                 <div className="guest-item-buttons-container">
                   <button
+                    type="button"
                     className="guest-item-decrement-button"
                     onClick={this.onDecrementAdultsCount}
                   >
@@ -648,6 +656,7 @@ class BookANewTrip extends Component {
                   </button>
                   <p className="guest-item-count">{adultsCount}</p>
                   <button
+                    type="button"
                     className="guest-item-increment-button"
                     onClick={this.onIncrementAdultsCount}
                   >
@@ -663,6 +672,7 @@ class BookANewTrip extends Component {
                 </div>
                 <div className="guest-item-buttons-container">
                   <button
+                    type="button"
                     className="guest-item-decrement-button"
                     onClick={this.onDecrementChildrenCount}
                   >
@@ -670,6 +680,7 @@ class BookANewTrip extends Component {
                   </button>
                   <p className="guest-item-count">{childrenCount}</p>
                   <button
+                    type="button"
                     className="guest-item-increment-button"
                     onClick={this.onIncrementChildrenCount}
                   >
@@ -685,6 +696,7 @@ class BookANewTrip extends Component {
                 </div>
                 <div className="guest-item-buttons-container">
                   <button
+                    type="button"
                     className="guest-item-decrement-button"
                     onClick={this.onDecrementInfantsCount}
                   >
@@ -692,6 +704,7 @@ class BookANewTrip extends Component {
                   </button>
                   <p className="guest-item-count">{infantsCount}</p>
                   <button
+                    type="button"
                     className="guest-item-increment-button"
                     onClick={this.onIncrementInfantsCount}
                   >
@@ -709,6 +722,7 @@ class BookANewTrip extends Component {
                 Previous
               </button>
               <button
+                type="button"
                 onClick={this.onGoToTravelAssistanceForm}
                 className="next-button"
               >
@@ -813,6 +827,7 @@ class BookANewTrip extends Component {
               Previous
             </button>
             <button
+              type="button"
               onClick={this.onGoToConfirmationForm}
               className="next-button"
             >
@@ -879,6 +894,7 @@ class BookANewTrip extends Component {
                 Previous
               </button>
               <button
+                type="button"
                 onClick={this.onGoToConfirmationForm}
                 className="next-button"
               >
@@ -1136,6 +1152,7 @@ class BookANewTrip extends Component {
           Your booking has been confirmed.
         </p>
         <button
+          type="button"
           className="book-a-new-trip-button"
           onClick={this.onBookANewTrip}
         >
@@ -1154,6 +1171,7 @@ class BookANewTrip extends Component {
             Your booking has been confirmed.
           </p>
           <button
+            type="button"
             className="book-a-new-trip-button"
             onClick={this.onBookANewTrip}
           >

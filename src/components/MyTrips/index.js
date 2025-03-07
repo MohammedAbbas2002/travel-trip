@@ -28,7 +28,7 @@ const MyTrips = () => (
                   When you book a trip, you will see your trip details here.
                 </p>
                 <Link className="link" to="/book-a-new-trip">
-                  <button className="book-a-new-trip-button">
+                  <button type="button" className="book-a-new-trip-button">
                     Book a New Trip
                   </button>
                 </Link>
@@ -43,7 +43,7 @@ const MyTrips = () => (
                   When you book a trip, you will see your trip details here.
                 </p>
                 <Link className="link" to="/book-a-new-trip">
-                  <button className="book-a-new-trip-button">
+                  <button type="button" className="book-a-new-trip-button">
                     Book a New Trip
                   </button>
                 </Link>
