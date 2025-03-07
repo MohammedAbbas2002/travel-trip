@@ -6,6 +6,7 @@ import Home from './components/Home'
 import BookANewTrip from './components/BookANewTrip'
 import MyTrips from './components/MyTrips'
 import NotFound from './components/NotFound'
+import ProtectedRoute from './components/ProtectedRoute'
 
 import TripsListContext from './context/TripsListContext'
 
@@ -37,9 +38,13 @@ class App extends Component {
       >
         <Switch>
           <Route exact path="/login" component={Login} />
-          <Route exact path="/" component={Home} />
-          <Route exact path="/book-a-new-trip" component={BookANewTrip} />
-          <Route exact path="/my-trips" component={MyTrips} />
+          <ProtectedRoute exact path="/" component={Home} />
+          <ProtectedRoute
+            exact
+            path="/book-a-new-trip"
+            component={BookANewTrip}
+          />
+          <ProtectedRoute exact path="/my-trips" component={MyTrips} />
           <Route exact path="/not-found" component={NotFound} />
           <Redirect to="/not-found" />
         </Switch>
