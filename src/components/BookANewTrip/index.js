@@ -1226,71 +1226,64 @@ class BookANewTrip extends Component {
     return (
       <>
         <Header />
-        <div className="mobile-book-a-new-trip-container">
-          <ul className="mobile-hr-lines-list">
-            {stepsList.map(eachStep => {
-              const mobileTopHrLineActive =
-                eachStep.stepId === activeStep
-                  ? 'mobile-top-hr-line-active'
-                  : ''
-
-              return (
-                <li key={eachStep.stepId}>
-                  <hr
-                    className={`mobile-top-hr-line ${mobileTopHrLineActive}`}
-                  />
-                </li>
-              )
-            })}
-          </ul>
-          {isTripConfirmed ? this.renderConfirmedMessage() : this.renderStep()}
-        </div>
-        <div className="desktop-book-a-new-trip-container">
-          <div className="desktop-book-a-new-trip-card">
-            <div className="desktop-book-a-new-trip-card-left-container">
-              <ul className="desktop-steps-list">
+        <div className="book-a-new-trip-container">
+          <div className="book-a-new-trip-card">
+            <div className="book-a-new-trip-card-left-container">
+              <ul className="steps-list">
                 {stepsListWithCompletionStatus.map(eachStep => {
                   stepNumber += 1
 
-                  const desktopStepItemNumberActive =
+                  const stepItemNumberActive =
                     eachStep.stepId === activeStep
-                      ? 'desktop-step-item-number-active'
+                      ? 'step-item-number-active'
                       : ''
 
-                  const desktopStepItemNameActive =
+                  const stepItemNameActive =
                     eachStep.stepId === activeStep
-                      ? 'desktop-step-item-name-active'
+                      ? 'step-item-name-active'
                       : ''
 
                   return (
-                    <li key={eachStep.stepId} className="desktop-step-item">
+                    <li key={eachStep.stepId} className="step-item">
                       {eachStep.completionStatus === 'COMPLETED' ? (
                         <img
                           src="https://assets.ccbp.in/frontend/react-js/travel-trip-steps-successfully-completed-img.png"
-                          className="desktop-step-item-completion-image"
+                          className="step-item-completion-image"
                           alt={eachStep.displayText}
                         />
                       ) : (
                         <p
-                          className={`desktop-step-item-number ${desktopStepItemNumberActive}`}
+                          className={`step-item-number ${stepItemNumberActive}`}
                         >
                           {stepNumber}
                         </p>
                       )}
-                      <p
-                        className={`desktop-step-item-name ${desktopStepItemNameActive}`}
-                      >
+                      <p className={`step-item-name ${stepItemNameActive}`}>
                         {eachStep.displayText}
                       </p>
                     </li>
                   )
                 })}
               </ul>
-            </div>
-            <div className="desktop-book-a-new-trip-card-right-container">
-              {isTripConfirmed
-                ? this.renderConfirmedMessage()
-                : this.renderStep()}
+              <ul className="top-hr-lines-list">
+                {stepsList.map(eachStep => {
+                  const topHrLineActive =
+                    eachStep.stepId === activeStep
+                      ? 'mobile-top-hr-line-active'
+                      : ''
+
+                  return (
+                    <li key={eachStep.stepId}>
+                      <hr className={`top-hr-line ${topHrLineActive}`} />
+                    </li>
+                  )
+                })}
+              </ul>
+              <div className="book-a-new-trip-card-right-container">
+                {isTripConfirmed
+                  ? this.renderConfirmedMessage()
+                  : this.renderStep()}
+              </div>
             </div>
           </div>
         </div>

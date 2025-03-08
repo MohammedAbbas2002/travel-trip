@@ -1,50 +1,107 @@
-.mobile-book-a-new-trip-container {
+.book-a-new-trip-container {
+  background-color: #f1f5f9;
   height: 92vh;
   padding: 14px;
 }
 
 @media screen and (min-width: 768px) {
-  .mobile-book-a-new-trip-container {
-    display: none;
+  .book-a-new-trip-container {
+    height: 120vh;
+    display: flex;
+    justify-content: center;
+    padding: 40px;
   }
 }
 
-.desktop-book-a-new-trip-container {
-  background-color: #f1f5f9;
-  height: 120vh;
-  display: flex;
-  justify-content: center;
-  padding: 40px;
-}
-
-@media screen and (max-width: 767px) {
-  .desktop-book-a-new-trip-container {
-    display: none;
+@media screen and (min-width: 768px) {
+  .book-a-new-trip-card {
+    width: 80%;
+    height: 100%;
+    background-color: #ffffff;
+    border-radius: 16px;
+    display: flex;
   }
 }
 
-.desktop-book-a-new-trip-card {
-  width: 80%;
-  height: 100%;
-  background-color: #ffffff;
-  border-radius: 16px;
-  display: flex;
+@media screen and (min-width: 768px) {
+  .book-a-new-trip-card-left-container {
+    width: 25%;
+    display: flex;
+    justify-content: center;
+  }
 }
 
-.desktop-book-a-new-trip-card-left-container {
-  width: 25%;
-  display: flex;
-  justify-content: center;
+@media screen and (min-width: 768px) {
+  .steps-list {
+    padding: 0;
+    list-style-type: none;
+    width: 166px;
+    margin-top: 32px;
+  }
 }
 
-.desktop-book-a-new-trip-card-right-container {
-  width: 75%;
-  background-color: #304766;
-  border-top-right-radius: 16px;
-  border-bottom-right-radius: 16px;
+@media screen and (min-width: 768px) {
+  .step-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 40px;
+    height: 32px;
+  }
 }
 
-.mobile-hr-lines-list {
+@media screen and (min-width: 768px) {
+  .step-item-completion-image {
+    width: 32px;
+    height: 32px;
+    margin-right: 12px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .step-item-number {
+    width: 32px;
+    height: 32px;
+    border-radius: 16px;
+    background-color: #ffffff;
+    border: 1px solid #cbd5e1;
+    font-family: Roboto;
+    font-weight: 600;
+    font-size: 14px;
+    letter-spacing: 0%;
+    color: #1e293b;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 12px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .step-item-number-active {
+    color: #ffffff;
+    border: none;
+    background-color: #3b82f6;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .step-item-name {
+    font-family: Roboto;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 20px;
+    letter-spacing: 0%;
+    color: #334155;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .step-item-name-active {
+    color: #2563eb;
+  }
+}
+
+.top-hr-lines-list {
   padding: 0;
   list-style-type: none;
   display: flex;
@@ -52,70 +109,29 @@
   margin-top: 20px;
 }
 
-.desktop-steps-list {
-  padding: 0;
-  list-style-type: none;
-  width: 166px;
-  margin-top: 32px;
+@media screen and (min-width: 768px) {
+  .top-hr-lines-list {
+    display: none;
+  }
 }
 
-.mobile-top-hr-line {
+.top-hr-line {
   width: 59.2px;
   border-radius: 12px;
   border: 2px solid #e7e7e7;
 }
 
-.desktop-step-item {
-  display: flex;
-  align-items: center;
-  margin-bottom: 40px;
-  height: 32px;
-}
-
-.desktop-step-item-number {
-  width: 32px;
-  height: 32px;
-  border-radius: 16px;
-  background-color: #ffffff;
-  border: 1px solid #cbd5e1;
-  font-family: Roboto;
-  font-weight: 600;
-  font-size: 14px;
-  letter-spacing: 0%;
-  color: #1e293b;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-right: 12px;
-}
-
-.desktop-step-item-number-active {
-  color: #ffffff;
-  border: none;
-  background-color: #3b82f6;
-}
-
-.desktop-step-item-completion-image {
-  width: 32px;
-  height: 32px;
-  margin-right: 12px;
-}
-
-.desktop-step-item-name {
-  font-family: Roboto;
-  font-weight: 500;
-  font-size: 14px;
-  line-height: 20px;
-  letter-spacing: 0%;
-  color: #334155;
-}
-
-.desktop-step-item-name-active {
-  color: #2563eb;
-}
-
-.mobile-top-hr-line-active {
+.top-hr-line-active {
   border: 2px solid #2563eb;
+}
+
+@media screen and (min-width: 768px) {
+  .desktop-book-a-new-trip-card-right-container {
+    width: 75%;
+    background-color: #304766;
+    border-top-right-radius: 16px;
+    border-bottom-right-radius: 16px;
+  }
 }
 
 .mobile-your-details-container {
