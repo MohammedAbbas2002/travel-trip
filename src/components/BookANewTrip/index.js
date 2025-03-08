@@ -399,10 +399,10 @@ class BookANewTrip extends Component {
     const {adultsCount, childrenCount, infantsCount} = this.state
 
     return (
-      <>
-        <div className="mobile-guests-container">
-          <h1 className="mobile-guests-heading">Guests</h1>
-          <p className="mobile-guests-description">Select your Guests</p>
+      <div className="guests-container">
+        <h1 className="guests-heading">Guests</h1>
+        <p className="guests-description">Select your Guests</p>
+        <div className="guests-list-and-previous-and-next-button-container">
           <ul className="guests-list">
             <li className="guest-item">
               <div>
@@ -493,102 +493,7 @@ class BookANewTrip extends Component {
             </button>
           </div>
         </div>
-        <div className="desktop-guests-container">
-          <h1 className="desktop-guests-heading">Guests</h1>
-          <p className="desktop-guests-description">Select your Guests</p>
-          <div className="desktop-guests-list-and-previous-and-next-button-container">
-            <ul className="guests-list">
-              <li className="guest-item">
-                <div>
-                  <p className="guest-item-name">Adults</p>
-                  <p className="guest-item-age">Age 13 or above</p>
-                </div>
-                <div className="guest-item-buttons-container">
-                  <button
-                    type="button"
-                    className="guest-item-decrement-button"
-                    onClick={this.onDecrementAdultsCount}
-                  >
-                    <FaMinus size="14" color="#1E293B" />
-                  </button>
-                  <p className="guest-item-count">{adultsCount}</p>
-                  <button
-                    type="button"
-                    className="guest-item-increment-button"
-                    onClick={this.onIncrementAdultsCount}
-                  >
-                    <FaPlus size="14" color="#1E293B" />
-                  </button>
-                </div>
-              </li>
-              <hr className="guests-hr-line" />
-              <li className="guest-item">
-                <div>
-                  <p className="guest-item-name">Children</p>
-                  <p className="guest-item-age">Age 2-12</p>
-                </div>
-                <div className="guest-item-buttons-container">
-                  <button
-                    type="button"
-                    className="guest-item-decrement-button"
-                    onClick={this.onDecrementChildrenCount}
-                  >
-                    <FaMinus size="14" color="#1E293B" />
-                  </button>
-                  <p className="guest-item-count">{childrenCount}</p>
-                  <button
-                    type="button"
-                    className="guest-item-increment-button"
-                    onClick={this.onIncrementChildrenCount}
-                  >
-                    <FaPlus size="14" color="#1E293B" />
-                  </button>
-                </div>
-              </li>
-              <hr className="guests-hr-line" />
-              <li className="guest-item">
-                <div>
-                  <p className="guest-item-name">Infants</p>
-                  <p className="guest-item-age">Under 2</p>
-                </div>
-                <div className="guest-item-buttons-container">
-                  <button
-                    type="button"
-                    className="guest-item-decrement-button"
-                    onClick={this.onDecrementInfantsCount}
-                  >
-                    <FaMinus size="14" color="#1E293B" />
-                  </button>
-                  <p className="guest-item-count">{infantsCount}</p>
-                  <button
-                    type="button"
-                    className="guest-item-increment-button"
-                    onClick={this.onIncrementInfantsCount}
-                  >
-                    <FaPlus size="14" color="#1E293B" />
-                  </button>
-                </div>
-              </li>
-            </ul>
-            <div className="desktop-previous-and-next-button-container">
-              <button
-                type="button"
-                className="previous-button"
-                onClick={this.onGoToDateSelectionForm}
-              >
-                Previous
-              </button>
-              <button
-                type="button"
-                onClick={this.onGoToTravelAssistanceForm}
-                className="next-button"
-              >
-                Next
-              </button>
-            </div>
-          </div>
-        </div>
-      </>
+      </div>
     )
   }
 
@@ -625,14 +530,12 @@ class BookANewTrip extends Component {
     const {isTravelAssistanceChecked, travelAssistance} = this.state
 
     return (
-      <>
-        <div className="mobile-travel-assistance-container">
-          <h1 className="mobile-travel-assistance-heading">
-            Travel Assistance
-          </h1>
-          <p className="mobile-travel-assistance-description">
-            Select your Travel Assistance.
-          </p>
+      <div className="travel-assistance-container">
+        <h1 className="travel-assistance-heading">Travel Assistance</h1>
+        <p className="travel-assistance-description">
+          Select your Travel Assistance.
+        </p>
+        <div className="travel-assistance-checkbox-and-select-and-previous-and-next-button-container">
           <div className="travel-assistance-checkbox-container">
             <input
               id="travelAssistanceCheckbox"
@@ -692,75 +595,7 @@ class BookANewTrip extends Component {
             </button>
           </div>
         </div>
-        <div className="desktop-travel-assistance-container">
-          <h1 className="desktop-travel-assistance-heading">
-            Travel Assistance
-          </h1>
-          <p className="desktop-travel-assistance-description">
-            Select your Travel Assistance.
-          </p>
-          <div className="desktop-travel-assistance-checkbox-and-select-and-previous-and-next-button-container">
-            <div className="travel-assistance-checkbox-container">
-              <input
-                id="travelAssistanceCheckbox"
-                type="checkbox"
-                className="travel-assistance-checkbox"
-                onChange={this.onToggleTravelAssistance}
-              />
-              <label
-                htmlFor="travelAssistanceCheckbox"
-                className="travel-assistance-checkbox-label"
-              >
-                Travel Assistance
-              </label>
-            </div>
-
-            {isTravelAssistanceChecked && (
-              <div className="travel-assistance-select-container">
-                <label
-                  htmlFor="travelAssistanceSelect"
-                  className="travel-assistance-select-label"
-                >
-                  Travel Assistance
-                </label>
-                <br />
-                <select
-                  id="travelAssistanceSelect"
-                  className="travel-assistance-select"
-                  onChange={this.onChangeTravelAssistance}
-                  value={travelAssistance}
-                >
-                  {travelAssistanceList.map(eachTravelAssistance => (
-                    <option
-                      key={eachTravelAssistance.value}
-                      value={eachTravelAssistance.value}
-                    >
-                      {eachTravelAssistance.displayText}
-                    </option>
-                  ))}
-                </select>
-              </div>
-            )}
-
-            <div className="desktop-previous-and-next-button-container">
-              <button
-                type="button"
-                className="previous-button"
-                onClick={this.onGoToGuestsForm}
-              >
-                Previous
-              </button>
-              <button
-                type="button"
-                onClick={this.onGoToConfirmationForm}
-                className="next-button"
-              >
-                Next
-              </button>
-            </div>
-          </div>
-        </div>
-      </>
+      </div>
     )
   }
 
