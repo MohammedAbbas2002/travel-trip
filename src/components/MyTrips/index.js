@@ -22,6 +22,7 @@ const MyTrips = () => (
                 <img
                   src="https://res.cloudinary.com/dt7mi4nem/image/upload/v1741297116/Frame_1000003903_1_eqfbo7.png"
                   className="no-trips-image"
+                  alt="no trips"
                 />
                 <h1 className="no-trips-heading">No upcoming trips.</h1>
                 <p className="no-trips-description">
@@ -29,7 +30,7 @@ const MyTrips = () => (
                 </p>
                 <Link className="link" to="/book-a-new-trip">
                   <button type="button" className="book-a-new-trip-button">
-                    Book a New Trip
+                    Book a new trip
                   </button>
                 </Link>
               </div>

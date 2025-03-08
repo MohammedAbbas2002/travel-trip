@@ -13,10 +13,12 @@ const Home = () => (
         <img
           src="https://res.cloudinary.com/dt7mi4nem/image/upload/v1741060875/image_5_1_hvzpl8.png"
           className="mobile-home-image"
+          alt="home"
         />
         <img
           src="https://res.cloudinary.com/dt7mi4nem/image/upload/v1741060456/image_5_zvyxp6.png"
           className="desktop-home-image"
+          alt="home"
         />
       </div>
       <div className="home-content-container">
@@ -28,7 +30,7 @@ const Home = () => (
         <div className="home-book-a-new-trip-button-container">
           <Link to="/book-a-new-trip" className="link">
             <button type="button" className="home-book-a-new-trip-button">
-              Book a New Trip
+              Book a new trip
             </button>
           </Link>
         </div>

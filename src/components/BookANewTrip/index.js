@@ -546,7 +546,7 @@ class BookANewTrip extends Component {
               htmlFor="travelAssistanceCheckbox"
               className="travel-assistance-checkbox-label"
             >
-              Travel Assistance
+              Travel Assistance Needed
             </label>
           </div>
 
