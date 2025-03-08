@@ -26,7 +26,7 @@ const travelAssistanceList = [
 
 class BookANewTrip extends Component {
   state = {
-    activeStep: stepsList[2].stepId,
+    activeStep: stepsList[0].stepId,
     stepOneCompletionStatus: 'PENDING',
     stepTwoCompletionStatus: 'PENDING',
     stepThreeCompletionStatus: 'PENDING',
