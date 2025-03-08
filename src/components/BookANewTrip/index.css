@@ -1,11 +1,12 @@
 .book-a-new-trip-container {
-  background-color: #f1f5f9;
+  background-color: #ffffff;
   height: 92vh;
   padding: 14px;
 }
 
 @media screen and (min-width: 768px) {
   .book-a-new-trip-container {
+    background-color: #f1f5f9;
     height: 120vh;
     display: flex;
     justify-content: center;
@@ -31,8 +32,13 @@
   }
 }
 
+.steps-list {
+  display: none;
+}
+
 @media screen and (min-width: 768px) {
   .steps-list {
+    display: block;
     padding: 0;
     list-style-type: none;
     width: 166px;
@@ -126,7 +132,7 @@
 }
 
 @media screen and (min-width: 768px) {
-  .desktop-book-a-new-trip-card-right-container {
+  .book-a-new-trip-card-right-container {
     width: 75%;
     background-color: #304766;
     border-top-right-radius: 16px;
@@ -134,31 +140,21 @@
   }
 }
 
-.mobile-your-details-container {
+.your-details-container {
   padding-top: 8px;
 }
 
 @media screen and (min-width: 768px) {
-  .mobile-your-details-container {
-    display: none;
+  .your-details-container {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px;
   }
 }
 
-.desktop-your-details-container {
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 40px;
-}
-
-@media screen and (max-width: 767px) {
-  .desktop-your-details-container {
-    display: none;
-  }
-}
-
-.mobile-your-details-heading {
+.your-details-heading {
   font-family: Roboto;
   font-weight: 600;
   font-size: 20px;
@@ -168,17 +164,16 @@
   margin-bottom: 10px;
 }
 
-.desktop-your-details-heading {
-  font-family: Roboto;
-  font-weight: 600;
-  font-size: 24px;
-  line-height: 29.05px;
-  letter-spacing: 0px;
-  color: #f1f5f9;
-  margin-bottom: 10px;
+@media screen and (min-width: 768px) {
+  .your-details-heading {
+    font-size: 24px;
+    line-height: 29.05px;
+    letter-spacing: 0px;
+    color: #f1f5f9;
+  }
 }
 
-.mobile-your-details-description {
+.your-details-description {
   font-family: Roboto;
   font-weight: 400;
   font-size: 16px;
@@ -189,22 +184,21 @@
   margin-bottom: 20px;
 }
 
-.desktop-your-details-description {
-  font-family: Roboto;
-  font-weight: 400;
-  font-size: 16px;
-  line-height: 24px;
-  letter-spacing: 0px;
-  color: #f1f5f9;
-  margin-top: 0;
-  margin-bottom: 40px;
+@media screen and (min-width: 768px) {
+  .your-details-description {
+    letter-spacing: 0px;
+    color: #f1f5f9;
+    margin-bottom: 40px;
+  }
 }
 
-.desktop-your-details-form {
-  width: 60%;
-  background-color: #ffffff;
-  border-radius: 16px;
-  padding: 40px;
+@media screen and (min-width: 768px) {
+  .your-details-form {
+    width: 60%;
+    background-color: #ffffff;
+    border-radius: 16px;
+    padding: 40px;
+  }
 }
 
 .name-input-container {
@@ -332,31 +326,21 @@
   margin-top: 8px;
 }
 
-.mobile-date-selection-container {
+.date-selection-container {
   padding-top: 8px;
 }
 
 @media screen and (min-width: 768px) {
-  .mobile-date-selection-container {
-    display: none;
+  .date-selection-container {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px;
   }
 }
 
-.desktop-date-selection-container {
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 40px;
-}
-
-@media screen and (max-width: 767px) {
-  .desktop-date-selection-container {
-    display: none;
-  }
-}
-
-.mobile-date-selection-heading {
+.date-selection-heading {
   font-family: Roboto;
   font-weight: 600;
   font-size: 20px;
@@ -366,17 +350,16 @@
   margin-bottom: 10px;
 }
 
-.desktop-date-selection-heading {
-  font-family: Roboto;
-  font-weight: 600;
-  font-size: 24px;
-  line-height: 29.05px;
-  letter-spacing: 0px;
-  color: #f1f5f9;
-  margin-bottom: 10px;
+@media screen and (min-width: 768px) {
+  .date-selection-heading {
+    font-size: 24px;
+    line-height: 29.05px;
+    letter-spacing: 0px;
+    color: #f1f5f9;
+  }
 }
 
-.mobile-date-selection-description {
+.date-selection-description {
   font-family: Roboto;
   font-weight: 400;
   font-size: 16px;
@@ -387,22 +370,21 @@
   margin-bottom: 20px;
 }
 
-.desktop-date-selection-description {
-  font-family: Roboto;
-  font-weight: 400;
-  font-size: 16px;
-  line-height: 24px;
-  letter-spacing: 0px;
-  color: #f1f5f9;
-  margin-top: 0;
-  margin-bottom: 40px;
+@media screen and (min-width: 768px) {
+  .date-selection-description {
+    letter-spacing: 0px;
+    color: #f1f5f9;
+    margin-bottom: 40px;
+  }
 }
 
-.desktop-date-selection-form {
-  width: 60%;
-  background-color: #ffffff;
-  border-radius: 16px;
-  padding: 40px;
+@media screen and (min-width: 768px) {
+  .date-selection-form {
+    width: 60%;
+    background-color: #ffffff;
+    border-radius: 16px;
+    padding: 40px;
+  }
 }
 
 .start-date-input-container {
