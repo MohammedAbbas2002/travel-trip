@@ -1279,11 +1279,11 @@ class BookANewTrip extends Component {
                   )
                 })}
               </ul>
-              <div className="book-a-new-trip-card-right-container">
-                {isTripConfirmed
-                  ? this.renderConfirmedMessage()
-                  : this.renderStep()}
-              </div>
+            </div>
+            <div className="book-a-new-trip-card-right-container">
+              {isTripConfirmed
+                ? this.renderConfirmedMessage()
+                : this.renderStep()}
             </div>
           </div>
         </div>
