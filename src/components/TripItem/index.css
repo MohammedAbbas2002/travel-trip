@@ -1,4 +1,4 @@
-.mobile-my-trip-item {
+.my-trip-item {
   border: 1px solid #3047665e;
   border-radius: 16px;
   padding: 20px;
@@ -6,26 +6,12 @@
 }
 
 @media screen and (min-width: 768px) {
-  .mobile-my-trip-item {
-    display: none;
-  }
-}
-
-.desktop-my-trip-item {
-  border: 1px solid #3047665e;
-  border-radius: 16px;
-  padding: 20px;
-  padding-left: 60px;
-  padding-right: 60px;
-  margin-bottom: 20px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-@media screen and (max-width: 767px) {
-  .desktop-my-trip-item {
-    display: none;
+  .my-trip-item {
+    padding-left: 60px;
+    padding-right: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
   }
 }
 

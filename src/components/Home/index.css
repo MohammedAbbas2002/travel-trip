@@ -8,10 +8,11 @@
 
 @media screen and (min-width: 768px) {
   .home-container {
-    display: flex;
     flex-direction: row;
+    padding: 0;
     padding-left: 162px;
     padding-right: 162px;
+    height: 0;
   }
 }
 
@@ -40,6 +41,7 @@
   width: 644px;
   height: 624px;
   margin-top: 40px;
+  display: block;
 }
 
 @media screen and (max-width: 767px) {
@@ -67,12 +69,8 @@
 
 @media screen and (min-width: 768px) {
   .home-heading {
-    font-family: Roboto;
-    font-weight: 600;
     font-size: 56px;
     line-height: 72px;
-    letter-spacing: 0.1px;
-    color: #304766;
   }
 }
 
@@ -88,12 +86,8 @@
 
 @media screen and (min-width: 768px) {
   .home-description {
-    font-family: Roboto;
-    font-weight: 400;
     font-size: 20px;
     line-height: 37px;
-    letter-spacing: 0.2px;
-    color: #304766;
     margin-bottom: 40px;
   }
 }

@@ -1,23 +1,14 @@
-.mobile-my-trips-container {
+.my-trips-container {
   min-height: 92vh;
   padding: 20px;
 }
 
 @media screen and (min-width: 768px) {
-  .mobile-my-trips-container {
-    display: none;
-  }
-}
-
-.desktop-my-trips-container {
-  padding: 30px;
-  padding-left: 140px;
-  padding-right: 140px;
-}
-
-@media screen and (max-width: 767px) {
-  .desktop-my-trips-container {
-    display: none;
+  .my-trips-container {
+    padding: 30px;
+    padding-left: 140px;
+    padding-right: 140px;
+    min-height: 0;
   }
 }
 
@@ -36,7 +27,7 @@
   list-style-type: none;
 }
 
-.mobile-no-trips-container {
+.no-trips-container {
   height: 92vh;
   display: flex;
   flex-direction: column;
@@ -46,23 +37,8 @@
 }
 
 @media screen and (min-width: 768px) {
-  .mobile-no-trips-container {
-    display: none;
-  }
-}
-
-.desktop-no-trips-container {
-  min-height: 80vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding: 40px;
-}
-
-@media screen and (max-width: 767px) {
-  .desktop-no-trips-container {
-    display: none;
+  .no-trips-container {
+    height: 80vh;
   }
 }
 
@@ -72,7 +48,7 @@
   margin-bottom: 10px;
 }
 
-.mobile-no-trips-heading {
+.no-trips-heading {
   font-family: Roboto;
   font-weight: 500;
   font-size: 16px;
@@ -82,17 +58,13 @@
   margin-bottom: 0;
 }
 
-.desktop-no-trips-heading {
-  font-family: Roboto;
-  font-weight: 500;
-  font-size: 24px;
-  line-height: 32px;
-  letter-spacing: 0.1px;
-  color: #191919;
-  margin-bottom: 0;
+@media screen and (min-width: 768px) {
+  .no-trips-heading {
+    font-size: 24px;
+  }
 }
 
-.mobile-no-trips-description {
+.no-trips-description {
   font-family: Roboto;
   font-weight: 400;
   font-size: 14px;
@@ -103,15 +75,10 @@
   margin-bottom: 30px;
 }
 
-.desktop-no-trips-description {
-  font-family: Roboto;
-  font-weight: 400;
-  font-size: 16px;
-  line-height: 24px;
-  letter-spacing: 0.1px;
-  color: #191919cc;
-  text-align: center;
-  margin-bottom: 30px;
+@media screen and (min-width: 768px) {
+  .no-trips-description {
+    font-size: 16px;
+  }
 }
 
 .book-a-new-trip-button {
