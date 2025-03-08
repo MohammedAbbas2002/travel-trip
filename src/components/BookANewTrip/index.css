@@ -584,6 +584,8 @@
   cursor: pointer;
   outline: none;
   margin-right: 14px;
+  color: '#1E293B';
+  font-size: 20px;
 }
 
 .guest-item-count {
@@ -604,6 +606,8 @@
   cursor: pointer;
   outline: none;
   margin-left: 14px;
+  color: '#1E293B';
+  font-size: 20px;
 }
 
 .guests-hr-line {
@@ -724,31 +728,21 @@
   margin-top: 4px;
 }
 
-.mobile-confirmation-container {
+.confirmation-container {
   padding-top: 8px;
 }
 
 @media screen and (min-width: 768px) {
-  .mobile-confirmation-container {
-    display: none;
+  .confirmation-container {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px;
   }
 }
 
-.desktop-confirmation-container {
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 40px;
-}
-
-@media screen and (max-width: 767px) {
-  .desktop-confirmation-container {
-    display: none;
-  }
-}
-
-.mobile-confirmation-heading {
+.confirmation-heading {
   font-family: Roboto;
   font-weight: 600;
   font-size: 20px;
@@ -758,17 +752,16 @@
   margin-bottom: 10px;
 }
 
-.desktop-confirmation-heading {
-  font-family: Roboto;
-  font-weight: 600;
-  font-size: 24px;
-  line-height: 29.05px;
-  letter-spacing: 0px;
-  color: #f1f5f9;
-  margin-bottom: 10px;
+@media screen and (min-width: 768px) {
+  .confirmation-heading {
+    font-size: 24px;
+    line-height: 29.05px;
+    letter-spacing: 0px;
+    color: #f1f5f9;
+  }
 }
 
-.mobile-confirmation-description {
+.confirmation-description {
   font-family: Roboto;
   font-weight: 400;
   font-size: 16px;
@@ -779,25 +772,24 @@
   margin-bottom: 20px;
 }
 
-.desktop-confirmation-description {
-  font-family: Roboto;
-  font-weight: 400;
-  font-size: 16px;
-  line-height: 24px;
-  letter-spacing: 0px;
-  color: #f1f5f9;
-  margin-top: 0;
-  margin-bottom: 40px;
+@media screen and (min-width: 768px) {
+  .confirmation-description {
+    letter-spacing: 0px;
+    color: #f1f5f9;
+    margin-bottom: 40px;
+  }
 }
 
-.desktop-confirmation-list-and-cancel-and-confirm-button-container {
-  width: 60%;
-  background-color: #ffffff;
-  border-radius: 16px;
-  padding: 40px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+@media screen and (min-width: 768px) {
+  .confirmation-list-and-cancel-and-confirm-button-container {
+    width: 60%;
+    background-color: #ffffff;
+    border-radius: 16px;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
 }
 
 .confirmation-list {
@@ -805,10 +797,10 @@
   list-style-type: none;
 }
 
-.desktop-confirmation-list {
-  padding: 0;
-  list-style-type: none;
-  margin-top: 0;
+@media screen and (min-width: 768px) {
+  .confirmation-list {
+    margin-top: 0;
+  }
 }
 
 .confirmation-item {
@@ -881,8 +873,8 @@
   margin-top: 8px;
 }
 
-.mobile-confirmed-message-container {
-  height: 100%;
+.confirmed-message-container {
+  height: 85vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -890,34 +882,29 @@
 }
 
 @media screen and (min-width: 768px) {
-  .mobile-confirmed-message-container {
-    display: none;
+  .confirmed-message-container {
+    height: 100%;
+    padding: 40px;
   }
 }
 
-.desktop-confirmed-message-container {
-  height: 100%;
+.confirmed-message-card {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 40px;
 }
 
-@media screen and (max-width: 767px) {
-  .desktop-confirmed-message-container {
-    display: none;
+@media screen and (min-width: 768px) {
+  .confirmed-message-card {
+    width: 60%;
+    background-color: #ffffff;
+    border-radius: 16px;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
-}
-
-.desktop-confirmed-message-card {
-  width: 60%;
-  background-color: #ffffff;
-  border-radius: 16px;
-  padding: 40px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
 }
 
 .confirmed-message-image {

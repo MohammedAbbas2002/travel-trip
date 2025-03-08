@@ -1,6 +1,5 @@
 import {Component} from 'react'
 import {MdErrorOutline} from 'react-icons/md'
-import {FaPlus, FaMinus} from 'react-icons/fa6'
 import {v4 as uuidv4} from 'uuid'
 
 import Footer from '../Footer'
@@ -27,7 +26,7 @@ const travelAssistanceList = [
 
 class BookANewTrip extends Component {
   state = {
-    activeStep: stepsList[0].stepId,
+    activeStep: stepsList[2].stepId,
     stepOneCompletionStatus: 'PENDING',
     stepTwoCompletionStatus: 'PENDING',
     stepThreeCompletionStatus: 'PENDING',
@@ -415,7 +414,7 @@ class BookANewTrip extends Component {
                   className="guest-item-decrement-button"
                   onClick={this.onDecrementAdultsCount}
                 >
-                  <FaMinus size="14" color="#1E293B" />
+                  -
                 </button>
                 <p className="guest-item-count">{adultsCount}</p>
                 <button
@@ -423,7 +422,7 @@ class BookANewTrip extends Component {
                   className="guest-item-increment-button"
                   onClick={this.onIncrementAdultsCount}
                 >
-                  <FaPlus size="14" color="#1E293B" />
+                  +
                 </button>
               </div>
             </li>
@@ -439,7 +438,7 @@ class BookANewTrip extends Component {
                   className="guest-item-decrement-button"
                   onClick={this.onDecrementChildrenCount}
                 >
-                  <FaMinus size="14" color="#1E293B" />
+                  -
                 </button>
                 <p className="guest-item-count">{childrenCount}</p>
                 <button
@@ -447,7 +446,7 @@ class BookANewTrip extends Component {
                   className="guest-item-increment-button"
                   onClick={this.onIncrementChildrenCount}
                 >
-                  <FaPlus size="14" color="#1E293B" />
+                  +
                 </button>
               </div>
             </li>
@@ -463,7 +462,7 @@ class BookANewTrip extends Component {
                   className="guest-item-decrement-button"
                   onClick={this.onDecrementInfantsCount}
                 >
-                  <FaMinus size="14" color="#1E293B" />
+                  -
                 </button>
                 <p className="guest-item-count">{infantsCount}</p>
                 <button
@@ -471,7 +470,7 @@ class BookANewTrip extends Component {
                   className="guest-item-increment-button"
                   onClick={this.onIncrementInfantsCount}
                 >
-                  <FaPlus size="14" color="#1E293B" />
+                  +
                 </button>
               </div>
             </li>
@@ -666,12 +665,10 @@ class BookANewTrip extends Component {
           }
 
           return (
-            <>
-              <div className="mobile-confirmation-container">
-                <h1 className="mobile-confirmation-heading">Confirmation</h1>
-                <p className="mobile-confirmation-description">
-                  Confirm your details
-                </p>
+            <div className="confirmation-container">
+              <h1 className="confirmation-heading">Confirmation</h1>
+              <p className="confirmation-description">Confirm your details</p>
+              <div className="confirmation-list-and-cancel-and-confirm-button-container">
                 <ul className="confirmation-list">
                   <li className="confirmation-item">
                     <p className="confirmation-label">Name:</p>
@@ -721,63 +718,7 @@ class BookANewTrip extends Component {
                   </button>
                 </div>
               </div>
-              <div className="desktop-confirmation-container">
-                <h1 className="desktop-confirmation-heading">Confirmation</h1>
-                <p className="desktop-confirmation-description">
-                  Confirm your details
-                </p>
-                <div className="desktop-confirmation-list-and-cancel-and-confirm-button-container">
-                  <ul className="desktop-confirmation-list">
-                    <li className="confirmation-item">
-                      <p className="confirmation-label">Name:</p>
-                      <p className="confirmation-value">{name}</p>
-                    </li>
-                    <li className="confirmation-item">
-                      <p className="confirmation-label">Start Location:</p>
-                      <p className="confirmation-value">{startLocation}</p>
-                    </li>
-                    <li className="confirmation-item">
-                      <p className="confirmation-label">End Location:</p>
-                      <p className="confirmation-value">{endLocation}</p>
-                    </li>
-                    <li className="confirmation-item">
-                      <p className="confirmation-label">Start Date:</p>
-                      <p className="confirmation-value">{startDate}</p>
-                    </li>
-                    <li className="confirmation-item">
-                      <p className="confirmation-label">End Date:</p>
-                      <p className="confirmation-value">{endDate}</p>
-                    </li>
-                    <li className="confirmation-item">
-                      <p className="confirmation-label">Guests:</p>
-                      <p className="confirmation-value">{guests}</p>
-                    </li>
-                    <li className="confirmation-item">
-                      <p className="confirmation-label">Travel Assistance:</p>
-                      <p className="confirmation-value">
-                        {travelAssistanceDisplayText}
-                      </p>
-                    </li>
-                  </ul>
-                  <div className="cancel-and-confirm-button-container">
-                    <button
-                      type="button"
-                      className="cancel-button"
-                      onClick={this.onCancelTrip}
-                    >
-                      Cancel
-                    </button>
-                    <button
-                      type="button"
-                      onClick={onConfirmTrip}
-                      className="confirm-button"
-                    >
-                      Confirm
-                    </button>
-                  </div>
-                </div>
-              </div>
-            </>
+            </div>
           )
         }}
       </TripsListContext.Consumer>
@@ -832,8 +773,8 @@ class BookANewTrip extends Component {
   }
 
   renderConfirmedMessage = () => (
-    <>
-      <div className="mobile-confirmed-message-container">
+    <div className="confirmed-message-container">
+      <div className="confirmed-message-card">
         <img
           src="https://assets.ccbp.in/frontend/react-js/travel-trip-steps-successfully-completed-img.png"
           className="confirmed-message-image"
@@ -851,27 +792,7 @@ class BookANewTrip extends Component {
           Book a New Trip
         </button>
       </div>
-      <div className="desktop-confirmed-message-container">
-        <div className="desktop-confirmed-message-card">
-          <img
-            src="https://assets.ccbp.in/frontend/react-js/travel-trip-steps-successfully-completed-img.png"
-            className="confirmed-message-image"
-            alt="success"
-          />
-          <h1 className="confirmed-message-heading">Awesome</h1>
-          <p className="confirmed-message-description">
-            Your booking has been confirmed.
-          </p>
-          <button
-            type="button"
-            className="book-a-new-trip-button"
-            onClick={this.onBookANewTrip}
-          >
-            Book a New Trip
-          </button>
-        </div>
-      </div>
-    </>
+    </div>
   )
 
   render() {
@@ -960,9 +881,7 @@ class BookANewTrip extends Component {
               <ul className="top-hr-lines-list">
                 {stepsList.map(eachStep => {
                   const topHrLineActive =
-                    eachStep.stepId === activeStep
-                      ? 'mobile-top-hr-line-active'
-                      : ''
+                    eachStep.stepId === activeStep ? 'top-hr-line-active' : ''
 
                   return (
                     <li key={eachStep.stepId}>
