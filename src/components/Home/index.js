@@ -12,7 +12,11 @@ const Home = () => (
       <div className="home-image-container">
         <img
           src="https://res.cloudinary.com/dt7mi4nem/image/upload/v1741060875/image_5_1_hvzpl8.png"
-          className="home-image"
+          className="mobile-home-image"
+        />
+        <img
+          src="https://res.cloudinary.com/dt7mi4nem/image/upload/v1741060456/image_5_zvyxp6.png"
+          className="desktop-home-image"
         />
       </div>
       <div className="home-content-container">

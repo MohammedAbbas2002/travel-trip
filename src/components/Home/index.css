@@ -25,16 +25,26 @@
   }
 }
 
-.home-image {
+.mobile-home-image {
   width: 227px;
   height: 312px;
 }
 
 @media screen and (min-width: 768px) {
-  .home-image {
-    width: 644px;
-    height: 624px;
-    margin-top: 40px;
+  .mobile-home-image {
+    display: none;
+  }
+}
+
+.desktop-home-image {
+  width: 644px;
+  height: 624px;
+  margin-top: 40px;
+}
+
+@media screen and (max-width: 767px) {
+  .desktop-home-image {
+    display: none;
   }
 }
 
