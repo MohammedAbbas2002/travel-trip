@@ -1,13 +1,13 @@
 .book-a-new-trip-container {
   background-color: #ffffff;
-  height: 92vh;
+  min-height: 92vh;
   padding: 14px;
 }
 
 @media screen and (min-width: 768px) {
   .book-a-new-trip-container {
     background-color: #f1f5f9;
-    height: 120vh;
+    min-height: 100vh;
     display: flex;
     justify-content: center;
     padding: 40px;
@@ -17,7 +17,6 @@
 @media screen and (min-width: 768px) {
   .book-a-new-trip-card {
     width: 80%;
-    height: 100%;
     background-color: #ffffff;
     border-radius: 16px;
     display: flex;
