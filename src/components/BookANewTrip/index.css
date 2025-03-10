@@ -301,9 +301,10 @@
   margin-top: 16px;
 }
 
-.desktop-next-button-container {
-  text-align: center;
-  margin-top: 16px;
+@media screen and (min-width: 768px) {
+  .next-button-container {
+    text-align: center;
+  }
 }
 
 .next-button {
@@ -451,9 +452,10 @@
   margin-top: 16px;
 }
 
-.desktop-previous-and-next-button-container {
-  text-align: center;
-  margin-top: 16px;
+@media screen and (min-width: 768px) {
+  .previous-and-next-button-container {
+    text-align: center;
+  }
 }
 
 .previous-button {
@@ -873,7 +875,7 @@
 }
 
 .confirmed-message-container {
-  height: 85vh;
+  height: 75vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
