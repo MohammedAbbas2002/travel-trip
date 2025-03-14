@@ -263,7 +263,7 @@ class BookANewTrip extends Component {
   onGoToYourDetailsForm = () => {
     this.setState({
       activeStep: stepsList[0].stepId,
-      stepOneCompletionStatus: false,
+      stepOneCompletionStatus: 'PENDING',
     })
   }
 
@@ -389,7 +389,7 @@ class BookANewTrip extends Component {
   onGoToDateSelectionForm = () => {
     this.setState({
       activeStep: stepsList[1].stepId,
-      stepTwoCompletionStatus: false,
+      stepTwoCompletionStatus: 'PENDING',
     })
   }
 
@@ -523,7 +523,7 @@ class BookANewTrip extends Component {
   onGoToGuestsForm = () => {
     this.setState({
       activeStep: stepsList[2].stepId,
-      stepThreeCompletionStatus: false,
+      stepThreeCompletionStatus: 'PENDING',
     })
   }
 
