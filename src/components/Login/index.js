@@ -74,13 +74,8 @@ class Login extends Component {
       return <Redirect to="/" />
     }
 
-    const {
-      username,
-      password,
-      isShowPassword,
-      isSubmitError,
-      errorMessage,
-    } = this.state
+    const {username, password, isShowPassword, isSubmitError, errorMessage} =
+      this.state
 
     return (
       <div className="login-container">
